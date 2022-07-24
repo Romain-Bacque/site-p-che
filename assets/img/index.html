@@ -1,0 +1,688 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moniteur guide de pêche en ariège</title>
+    <!--------favicon------->
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+         <!--------remix icon------->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"></link>
+       <!--------swipper css------->
+       <link rel="stylesheet" href="assets/css/swiper-bundle.min.css"></link>
+     <!--------font awesome icon------->
+     <script src="https://kit.fontawesome.com/8a4e4c7259.js" crossorigin="anonymous"></script> 
+<!------- LightBox -------->
+<link rel="stylesheet" href="assets/css/lightbox.min.css"></link>
+<script type="text/javascript" src="assets/js/lightbox-plus-jquery.min.js"></script>  
+       <!--------main css--------->
+       <link rel="stylesheet" href="assets/css/style.css"></link>
+</head>
+<body>
+<!-- loader dom -->
+<div id="loader__dom"></div>
+ <div id="content"></div>
+<!-- header -->
+    <header class="header" id="header">
+        <nav class="nav__container container">
+
+            <h3 href="#" class="nav__logo"><img src="assets/img/fish__websitelogo.png" width="20px" alt="">Pêche.</h3>
+
+<div class="nav__menu" id="nav-menu">
+
+<ul class="nav__list">
+<li class="nav__item">
+    <a href="#home" class="nav__link active-link">Accueil</a>
+</li>
+<li class="nav__item">
+    <a href="#lieux" class="nav__link">Lieux & techniques</a>
+</li>
+<li class="nav__item">
+    <a href="#gîtes" class="nav__link">Gîtes</a> 
+</li>
+<li class="nav__item">
+    <a href="#cadeau" class="nav__link">Idée cadeau</a>
+</li>
+<li class="nav__item">
+    <a href="#cgu" class="nav__link">Conditions Générales</a>
+</li>
+<li class="nav__item">
+    <a href="#tarifs" class="nav__link">Tarifs</a>
+</li>
+<li class="nav__item">
+    <a href="#album" class="nav__link">Albums</a>
+</li>
+</ul>
+
+<div class="nav__dark">
+    <!------Theme change button------> 
+    <span class="change-theme-name">Mode nuit</span>
+    <i class="ri-moon-line change-theme" id="theme-button"></i>
+ </div>
+ 
+         <i class="ri-close-line nav__close" id="nav-close"></i>
+       </div>
+ 
+       <div class="nav__toggle" id="nav-toggle">
+         <i class="ri-function-line"></i>
+       </div>
+   </nav>  
+ </header>
+
+
+<main class="main">
+
+    <!-- accueil -->
+<section class="home section" id="home">            
+
+        <div class="home__bannière">  
+            <div class="home__data">
+                <h1>
+              <span class="home__data-title">Joël Bacque</span><br><br>
+            <span class="home__data-subtitle">Moniteur guide de pêche <b><br> en Ariège</b></span>
+        </h1>
+           </div>   
+          <div class="wave wave1"></div>
+          <div class="wave wave2"></div>
+          <div class="wave wave3"></div>
+          <div class="wave wave4"></div>
+        </div>  
+
+ <div class="home__container container grid">
+
+ <div class="home__article">
+ <h2 class="home__description-title">Une petite présentation...</h2>
+ <p class="home__description">Bacqué Joël, moniteur-guide de pêche diplômé d’Etat BPJEPS 2012, plus de quarante ans de pratique et d’expérience, propose de vous encadrer suivant votre niveau durant votre stage ou séjour de pêche et de vous initier ou perfectionner sur nos somptueuses rivières et lacs de montagne, à la pratique de la pêche à la mouche toutes techniques, pêche au Toc aux appâts naturels ou nymphes et à la mouche, en toute simplicité et convivialité, dans une région très sauvage et diversifiée (le Couserans/Pyrénées Ariégeoises).</p>
+</div>
+
+ <div class="home__aside">
+ <img class="arrow" src="assets/img/arrow_left.png" alt="">
+ <h3>Lieu de rendez-vous</h3>
+ <iframe frameBorder="0" src="https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d614.809301830203!2d1.2608438852531976!3d42.861394923895844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!3e0!4m3!3m2!1d42.8613621!2d1.2621459!4m3!3m2!1d42.861492999999996!2d1.261132!5e0!3m2!1sfr!2sfr!4v1625517479899!5m2!1sfr!2sfr" width="600" height="450" loading="lazy"></iframe> 
+ </div>
+
+ <div class="home__img" id="home__img">
+     <div><img src="assets/img/riviere.jpg" loading="lazy" alt=""></div>
+    <div><img src="assets/img/canne_truite.jpg" loading="lazy" alt=""></div>
+ </div>
+ 
+</div>
+ </section>
+
+<!-- Lieux -->
+<section class="lieux section" id="lieux">
+
+ <div class="lieux__container container grid">
+
+<div class="lieux__bannière">
+    <div id="cloud"></div>
+    <div class="lieux__bannière-title">
+        <img id="marker" src="assets/img/marker.png" alt="">
+        <h1>ARIEGE EN COUSERANS</h1>
+        </div>
+        <p id="description" class="description-content">Le Couserans compte 18 vallées dans un cadre sauvage et préservé avec son réseau hydrographique de première catégorie important, avec une diversité de rivières très peuplées en salmonidés.</p>
+      </div>
+
+    <h2 class="lieux__techniques-title">Plus de 40 ans que je pêche dans cette région, je vous propose de vous initier ou perfectionner à:</h2>
+    <div class="lieux__techniques toc">
+        <div class="techniques__img-container"><img class="techniques__img" src="assets/img/prise_poisson.jpg" alt="pêche au toc" loading="lazy"></div>
+        <ul>
+            <li>
+                <h3>La pêche au Toc 'aux appâts naturels ou nymphes artificielles':</h3>
+                <p>Après avoir effectué une approche patiente et discrète. Quelle récompense de sentir dans les doigts « le Toc » franc d’une belle fario mouchetée sur le fil… Un bonheur intense Essayez et vous Verrez !</p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="lieux__techniques mouche">
+        <div class="techniques__img-container"><img class="techniques__img" src="assets/img/pêche_mouche.jpg" alt="pêche à la mouche" loading="lazy"></div>
+        <ul>
+            <li>
+            <h3>La pêche à la Mouche 'nymphe, noyée, sèche':</h3>
+            <p>Une pêche aussi technique que subtile, l’observation, l’étude de la rivière et la connaissance du milieu aquatique, demande de la précision et beaucoup de patience, mais quel plaisir de prendre son premier poisson avec ses propres mouches…</p>
+           </li>
+       </ul>
+    </div>
+
+    <div class="lieux__techniques coup">
+        <div class="techniques__img-container"><img class="techniques__img" src="assets/img/enfant_truite.jpg" alt="pêche au coup" loading="lazy"></div>
+        <ul>
+            <li>
+            <h3>Découverte de la pêche pour les enfants ou la famille:</h3>
+            <p>La pêche des vairons et pêche à la bombette et buldo de la truite avec découverte du milieu aquatique (animation pour les enfants).</p>
+           </li>
+        </ul>
+    </div>
+
+<div class="lieux__slider">
+
+  <div class="lieux__slides">
+    <img class="slide" src="assets/img/salat.jpg" alt="Riviere1">
+    <img class="slide" src="assets/img/l'alet.jpg" alt="Riviere2">
+    <img class="slide" src="assets/img/garbet.jpg" alt="Riviere3">
+    <img class="slide" src="assets/img/arac.jpg" alt="Riviere4">
+    <div class="text text1">Le Salat</div>
+    <div class="text text2">L'Alet</div>
+    <div class="text text3">Le Garbet</div>
+    <div class="text text4">L'Arac</div>
+  </div>
+
+    <div id="salat">
+    <div class="slider__description">
+    <p>Le SALAT, ses affluents l’Alet, le Garbet, l’Arac et le Lez prennent leurs sources dans des névés semi-permanents.<br>
+    Très poissonneux, vous serez séduit par la truite noire pointillée de rouge, d’une combativité que vous poursuivrez toujours plus haut, jusqu’aux nombreux lacs d’altitude.</p>
+   </div>
+    </div>
+
+ </div>
+
+</div>
+
+</section>
+
+<!-- gîtes -->
+<section class="gîtes section" id="gîtes">
+ <div class="gîtes__container container grid">
+
+ <div class="item1">
+
+    <div class="gîtes__bannière">
+    <h1>GÎTES DANS LE COUSERANS</h1>
+    <h2>Un accueil chaleureux pour un séjour de qualité en toute simplicité et convivialité</h2>
+    </div>
+
+    <div id="gîte1" class="photo__gîte">
+    <h3><img src="assets/img/home.png" alt=""> GÎTE JO</h3>
+    <div class= "gîtes-img"><img src="assets/img/p1.jpg" alt="" loading="lazy"></div>
+    <div class= "gîtes-img"><img src="assets/img/p2.jpeg" alt="" loading="lazy"></div>
+    <div class= "gîtes-img"><img src="assets/img/p3.jpg" alt="" loading="lazy"></div>
+    </div>
+
+    <div id="gîte2" class="photo__gîte">
+    <h3><img src="assets/img/home.png" alt=""> GÎTE FLO</h3>
+    <div class= "gîtes-img"><img src="assets/img/p5.jpg" alt="" loading="lazy"></div>
+    <div class= "gîtes-img"><img src="assets/img/p6.jpg" alt="" loading="lazy"></div>
+    <div class= "gîtes-img"><img src="assets/img/p7.jpg" alt="" loading="lazy"></div>
+    </div>
+    
+  <div id="panneau">
+    <img id="panneau__img" src="assets/img/panneaux.png">
+    <div class="panneau__text panneau__text1">Gîte Flo</div>
+    <div class="panneau__text panneau__text2">Gîte Jo</div>   
+  </div>
+
+ </div>
+
+  <div class="gîtes__description">
+    <div class="gîtes__description-img">
+    <img id="img2" src="assets/img/owner.jpg" alt="">
+    <img id="img3" src="assets/img/logo_gîte.jpg" alt="">
+    </div>
+    <div class="gîtes__description-content">
+    <h3>Bienvenue dans nos gîtes</h3>
+    <p>Nous vous proposons des gîtes de 60m2, indépendants et sans vis à vis, situés à 600m d’altitude surplombant la vallée du Garbet, somptueuse rivière très poissonneuse
+    à 200m sur un parcours «no kill». Tout confort, pouvant accueillir 4 personnes par Gîte, parking privé.</p>
+
+        <div class="gîtes__description-contact">
+    <p><img class=icon src="assets/img/phone_green.png" alt="">06.82.15.12.93</p>
+    <p><img class=icon src="assets/img/mail_green.png" alt=""><a href="mailto:bacqueflorence@wanadoo.fr">bacqueflorence@wanadoo.fr</a></p>
+   </div> 
+</div>
+</div> 
+
+</div>  
+</section>
+
+    <!-- cadeau -->
+    <section class="cadeau section" id="cadeau">
+
+     <div class="cadeau__container container grid">           
+    
+       <div class="container__bon">
+	   
+	   	<div class="bubble"></div>
+			<div class="bubble"></div>
+			<div class="bubble"></div>
+			<div class="bubble"></div>
+			<div class="bubble"></div>
+			<div class="bubble"></div>
+			<div class="bubble"></div>
+			<div class="bubble"></div>
+			<div class="bubble"></div>
+			<div class="bubble"></div>
+
+        <div id="container__form">
+		
+            <form class="form" id="form" action="https://formsubmit.co/bacqueromain@orange.fr" method="POST">
+			
+				<div class="photo__form"></div>
+			
+			<div>
+		
+			<h3 class="form__title">Formulaire de demande</h3>
+  
+            <button class="form__button close-button"><img src = "assets/img/close2.png" alt =""></button>
+       
+              <div class="form__control">
+              <label>Prénom</label>
+            <input id="user__lastname" type="text" name="Prénom" placeholder="Taper le Prénom" size="30" required>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
+            </div>
+
+            <div class="form__control">
+              <label>Nom</label>
+            <input id="user__firstname" type="text" name="Nom" placeholder="Taper le Nom" size="30" required>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
+            </div>
+
+            <div class="form__control">
+              <label>Adresse Mail</label>
+            <input id="user__email" type="email" name="Email" pattern="^[_a-z0-9-]+(.[a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$" placeholder="Tapez l'adresse mail" size="30" required>
+             <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
+            </div>
+
+            <div class="form__control">
+            <label>Du</label>
+            <input id="fromdate" class="timepicker" type="date" name="Du" placeholder="01/01/1999" maxlength="10" required>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
+           </div>
+
+            <div class="form__control">
+            <label>Au</label>
+            <input id="todate" class="timepicker" type="date" name="Au" placeholder="01/01/1999" maxlength="10" required>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
+            </div>
+            
+            <div class="form__control">
+            <textarea id="msg" type="text" name="Information(s) complémentaire" rows="5" cols="25" placeholder="Information(s) complémentaire"></textarea>
+            </div>
+
+            <button class="submit__button" type="submit">Soumettre</button>
+			<div id="loader"></div>
+			
+   </div>
+   
+            </form>      
+		 
+			
+        </div>
+
+            <div class="cadeau__description">
+                <h2>Idée cadeau</h2>
+                <p>Si vous souhaitez offrir un cadeau original à un passionné de pêche, vous pouvez réserver un stage à la 1/2 journée (ou plus), un séjour en lac de montagne avec hébergement en refuge dans l’Ariège (Etangs de BASSIES) ou dans les Pyrénées Orientales (Lac des Bouillouses et Camporells). Veuillez remplir le formulaire pour faire et envoyer votre demande.</p>
+            </div>
+
+            <div class="wrapper">
+                <div class="hook__container"><img class="hook" src= "assets/img/fishing_hook.png" alt= ""></div>
+                <div class="hook__container"><img class="hook" src= "assets/img/fishing_hook.png" alt= ""></div> 
+         <div class="bon" id="bon">            
+            <h2><img id="fish" src= "assets/img/fish.png" alt= ""> Bon cadeau</h2>
+         <p>Journée, 1/2 journée ou séjour pêche en initiation ou perfectionnement à la mouche ou au toc.<br><br>Anniversaire, fête des pères, départ retraite, etc.</p>     
+        
+          <button class="form__button">Remplir le formulaire</button>
+        </div>
+      </div>
+    </div>
+        </div>
+    </section>
+
+    <!-- CGU -->
+    <section class="cgu section" id="cgu">
+
+     <div class="cgu__container container grid">
+
+        <div class="cgu__aside">
+            <h2>Conditions Générales Prestation</h2>
+            <img src="assets/img/river3.jpg" class="cgu__aside-img" alt="" loading="lazy">
+        </div>
+
+        <div class="cgu__article">
+
+        <div>
+        <h3><img src="assets/img/arrow.png" alt="" width="30px"> Compris dans les prestations</h3>
+        <ul>
+        <li>L’initiation et le guidage.</li>
+        <li>Prêt du matériel et le consommable.</li>
+        <li>Les appâts naturels, les mouches artificielles, les leurres.</li>
+        </ul>
+        </div>
+
+        <div>
+        <h3><img src="assets/img/arrow.png" alt="" width="30px"> Non compris dans les prestations</h3>
+        <ul>
+        <li>Le permis de pêche obligatoire.</li>
+        <li>Le transport.</li>
+        <li>Les Waders.</li>
+        <li>Le(s) repas.</li>
+        </ul>
+        </div>
+
+        <div>
+        <h3><img src="assets/img/arrow.png" alt="" width="30px"> Annulation de votre part</h3>
+        <ul>
+        <li>Moins de 30 jours avant le début de la prestation: votre acompte sera conservé comme frais d’annulation sauf imprévu (maladie, accident). </li>
+        <li>Plus de 30 jours avant le début du stage où séjour: restitution de votre acompte.</li>
+        <li>Possibilité d’un report jusqu’à un an.</li>
+        </ul>
+        </div>
+
+        <div>
+        <ul>
+        <li class="cgu__reservation">Réservation par courrier 30% d’acompte (chèque bancaire ou postal) à l’ordre de Joël BACQUE. Solde à régler à votre arrivée.
+        <br><br>L’acompte ou le règlement total est à envoyer à mon intention à l’adresse suivante:
+        <br><br>Mr Joël BACQUE, 52 Impasse du chalet 32600 Ségoufielle</li>
+        </ul>
+        </div>
+
+      </div>
+  </div>
+        </section>
+
+        <!-- Tarifs -->
+        <section class="tarifs section" id="tarifs">
+            <div class="tarifs__container container grid">
+
+        <div class="tarifs__bannière">     
+
+            <div class="title">
+            <h1>Tarifs pêche à la truite</h1>
+            <h2>Joël BACQUE, moniteur Guide de pêche Diplômé d’Etat initiation et perfectionnement toutes techniques, pêche des Salmonidés en Couserans.<br><br><img class="icon" src="assets/img/phone.png" alt="">06.82.06.80.56</h2>
+            </div>
+
+            <div class="photos__bannière"></div>
+       </div>
+
+            <div class="tarifs__content">
+                
+            <div class="content">
+            <h3>-Formule stage de pêche (sans hébergement):</h3>
+            <p>Initiation ou perfectionnement (carte de pêche obligatoire, non compris dans les prestations)</p>
+            <table>
+            <tr class="table_header">
+            <th></th>
+            <th></th>
+            <th>1/2 journée</th>
+            <th>1 jour</th>
+            <th>2 jours</th>
+            <th>3 jours</th>
+            </tr>
+            <tr>
+            <td rowspan="4">Prix/pers/jour*</td>
+            <td>Base 1 personne&nbsp;</td>
+            <td>120€</td>
+            <td>200€</td>
+            <td>180€</td>
+            <td>160€</td>
+            </tr>
+            <tr>
+            <td>Base 2 personnes</td>
+            <td>110€</td>
+            <td>180€</td>
+            <td>160€</td>
+            <td>140€</td>
+            </tr>
+            <tr>
+            <td>Base 3 personnes</td>
+            <td>100€</td>
+            <td>140€</td>
+            <td>120€</td>
+            <td>110€</td>
+            </tr>
+            </table>
+            <p>*Pour une prestation de 4 heures pour la 1/2 journée et 8 heures à la journée d'enseignement et de pêche.<br>
+            + de 3 personnes: me contacter</p>
+            <p>LE COUP DU SOIR POUR LA PÊCHE A LA MOUCHE: 70€</p>
+            <p class="info-hébergement"><img class="icon" src="assets/img/info2.png" alt="">Possibilité d'hébergement dans nos gîtes:</p>
+            <p>Pour tout renseignement, de location semaine ou week-end, contactez Mme Bacqué Florence au <span style="font-weight: bold;">06.82.15.12.93</span></p>
+            </div>
+
+          <div class="content">
+            <h3>-Formule séjour de pêche dans les Pyrénées ARIEGOISES (site les ETANGS DE BASSIES) ou les Pyrénées Orientales (site LES BOUILLOUSES et CAMPOREILS):</h3>
+            <p>En refuge nuité et demi-pension + guidage en initiation ou perfectionnement pêche (Maximum personnes)</p>
+            <table>
+            <tr class="table_header">
+            <th></th>
+            <th>2 jours 1 nuit</th>
+            <th>3 jours 2 nuits</th>
+            </tr>
+            <tr>
+            <td>Prix par personne*</td>
+            <td>420€</td>
+            <td>530€</td>
+            </tr>
+            </table>
+            <p>*Pour une prestation de 8 heures d'enseignement et de pêche</p>
+          </div>
+
+            <div class="content">
+            <h3>-Tarif Animations:</h3>
+            <p>Initiation à la pêche au coup et lancé (BOMBETTE, BULDO, LEURRE) ou découverte du milieu aquatique, montage des mouches artificielles (prestation à la 1/2 journée). (Enfant à partir de 6 ans)<p>
+            <p>Carte de pêche obligatoire non comprise dans la prestation.</p>
+            </h3>
+            <table>
+            <tr class="table_header">
+            <th>Groupe de 5 à 10 enfants maxi</th>
+            <th>Groupe de 6 personnes handicapés maxi</th>
+            </tr>
+            <tr>
+            <td>20€ par enfant</td>
+            <td>20€ par personne</td>
+            </tr>
+            </table>
+        </div>
+
+          <div class="content">
+            <h3>-Tarif Animations:</h3>
+            <p>Initiation à la pêche au coup et lancé (BOMBETTE, BULDO, LEURRE) ou découverte du milieu aquatique, montage des mouches artificielles (prestation à la 1/2 journée).</p>
+            <p>(Enfant à partir de 6 ans) Carte de pêche obligatoire non comprise dans la prestation.</p>
+            </h3>
+            <table>
+            <tr class="table_header">
+            <th>Famille base: 2 adultes 1 enfant</th>
+            <th>Famille base: 2 adultes 2 enfants</th>
+            <th>Famille base: 2 adultes 3 enfants</th>
+            </tr>
+            <tr>
+            <td>120€</td>
+            <td>140€</td>
+            <td>160€</td>
+            </table>
+          </div>
+
+    </div>
+
+            <div class="tarifs__footer">
+                <div>
+            <h3>Renseignement, revue et carte de pêche:</h3>
+            <ol>
+            <li>AULUS les Bains au tabac presse: 05.61.96.04.36</li>
+            <li>SEIX à la boutique du sport le PICOU: 05.61.66.89.61</li>
+            <li>SEIX au tabac presse: 05.61.66.86.18</li>
+            <li>SEIX à l'Office du Tourisme sur la place du village</li>
+            <li>SOUEIX au restaurant 'LE PERROQUET': 05.61.66.80.91</li>
+            <li>USTOU à l’épicerie du camping municipal: 05.61.66.92.21</li>
+            </ol>
+            </div>
+           </div>
+
+    </div>
+</section>   
+
+
+<!-----album----->
+<section class="album section" id="album">   
+
+    <div class="album__container container swiper-container">  
+        
+        <h3 class="album__main-title">Photos prises lors d'animations dans les Pyrénées Orientales et en Ariège:</h3>
+
+    <div class="swiper-wrapper">
+        
+        <!-- card 1 -->
+    <div class="album__card swiper-slide gal1">
+
+      <a href="assets/img/guide/guide1.jpg" data-lightbox="gal1" data-title=""><img src="assets/img/guide/guide1.jpg" alt="" class="album__img"></a>
+	  <a href="assets/img/guide/guide2.jpg" data-lightbox="gal1" data-title=""></a>
+	  <a href="assets/img/guide/guide3.jpg" data-lightbox="gal1" data-title=""></a>
+	  <a href="assets/img/guide/guide4.jpg" data-lightbox="gal1" data-title=""></a>
+      
+      <div class="album__data">
+    <h2 class="album__title">le guide</h2>
+    <span class="album__description"></span>
+  </div>
+
+    </div>  
+            <!-- card 2 -->
+        <div class="album__card swiper-slide gal2">
+
+      <a href="assets/img/guidage/guidage1.jpg" data-lightbox="gal2" data-title=""><img src="assets/img/guidage/guidage1.jpg" alt="" class="album__img"></a>
+	  <a href="assets/img/guidage/guidage2.jpg" data-lightbox="gal2" data-title=""></a>
+	  <a href="assets/img/guidage/guidage3.jpg" data-lightbox="gal2" data-title=""></a>
+	  <a href="assets/img/guidage/guidage4.jpg" data-lightbox="gal2" data-title=""></a>
+      <a href="assets/img/guidage/guidage5.jpg" data-lightbox="gal2" data-title=""></a>
+	  <a href="assets/img/guidage/guidage6.jpg" data-lightbox="gal2" data-title=""></a>
+          
+            <div class="album__data">
+              <h2 class="album__title">Photos guidage</h2>
+              <span class="album__description"></span>
+        </div>
+
+        </div>    
+             <!-- card 3 -->
+    <div class="album__card swiper-slide gal3">
+	
+	  <a href="assets/img/enfants/enfant1.jpg" data-lightbox="gal3" data-title=""><img src="assets/img/enfants/enfant1.jpg" alt="" class="album__img"></a>
+	  <a href="assets/img/enfants/enfant2.jpg" data-lightbox="gal3" data-title=""></a>
+	  <a href="assets/img/enfants/enfant3.jpg" data-lightbox="gal3" data-title=""></a>
+	  <a href="assets/img/enfants/enfant4.jpg" data-lightbox="gal3" data-title=""></a>
+        
+	   <div class="album__data">
+          <h2 class="album__title">Animation pêche enfants</h2>
+          <span class="album__description"></span>
+        </div>
+
+         </div> 
+          <!-- card 4 -->  
+    <div class="album__card swiper-slide gal4">
+    
+	  <a href="assets/img/salmonidés/truite1.jpg" data-lightbox="gal4" data-title=""><img src="assets/img/salmonidés/truite1.jpg" alt="" class="album__img"></a>
+	  <a href="assets/img/salmonidés/truite2.jpg" data-lightbox="gal4" data-title=""></a>
+	  <a href="assets/img/salmonidés/truite3.jpg" data-lightbox="gal4" data-title=""></a>
+	  <a href="assets/img/salmonidés/truite4.jpg" data-lightbox="gal4" data-title=""></a>
+		 
+        <div class="album__data">
+          <h2 class="album__title">Salmonidés</h2>
+          <span class="album__description"></span>
+        </div>
+
+         </div>   
+             <!-- card 5 -->
+    <div class="album__card swiper-slide gal5">
+
+  <a href="assets/img/rivieres/riviere1.jpg" data-lightbox="gal5" data-title="L'Arac"><img src="assets/img/rivieres/riviere1.jpg" alt="" class="album__img"></a>
+	  <a href="assets/img/rivieres/riviere2.jpg" data-lightbox="gal5" data-title="Etang du Garbet"></a>
+	  <a href="assets/img/rivieres/riviere3.jpg" data-lightbox="gal5" data-title="Le Riberot"></a>
+	  <a href="assets/img/rivieres/riviere4.jpg" data-lightbox="gal5" data-title="Le Garbet"></a>
+	  	  <a href="assets/img/rivieres/riviere5.jpg" data-lightbox="gal5" data-title="Le Salat"></a>
+	   <a href="assets/img/rivieres/riviere7.jpg" data-lightbox="gal5" data-title="Le Garbet"></a>
+	   <a href="assets/img/rivieres/riviere8.jpg" data-lightbox="gal5" data-title="Etang du Laurenti"></a>
+	   <a href="assets/img/rivieres/riviere9.jpg" data-lightbox="gal5" data-title="L'Alet"></a>
+	  <a href="assets/img/rivieres/riviere10.jpg" data-lightbox="gal5" data-title="Le Lez"></a>
+	  
+        <div class="album__data">
+          <h2 class="album__title">Rivières & lacs</h2>
+          <span class="album__description"></span>
+        </div>
+
+         </div>   
+
+     </div>     
+    
+   </div> 
+   
+    <!-- video -->
+        <div class="video__container container">
+            <h3 class="video__description">Voici une petite vidéo:</h3>
+
+         <div class="video__card">
+
+            <video id="video-file">
+          <source src="assets/video/video.mp4" type="video/mp4">
+          Mise à jour du navigateur requise !
+      </video>
+      <button class="button video__button" id="video-button">
+        <i class="ri-play-line video__button-icon" id="video-icon"></i>
+    </button>
+   </div> 
+   
+</div>
+
+</div>
+
+</section>   
+
+</main>
+
+
+<!-- about -->
+<footer class="about section" id="about">
+
+    <div class="about__container container grid">
+     
+<div class="about-content about__titres">
+<h2>Mes titres</h2>
+<p>n° diplôme: <span>BP031120335</span></p>
+<p>n° carte professionnelle: <span>03212ED0030</span></p>
+<p>n° de SIRET: <span>790 268 452 00022</span></p>
+</div>
+
+<div class="about-content about__img">
+    <img src="assets/img/Federation.png" alt="">
+</div>
+
+<div class="about-content about__contact">
+<h2>Contact</h2>
+<p><img class="icon" src="assets/img/phone_green.png" alt="">06.82.06.80.56</p>
+<p><img class="icon" src="assets/img/mail_green.png" alt=""><a href="mailto:joel.bacque@wanadoo.fr">joel.bacque@wanadoo.fr</a></p>
+<p><img class="icon" src="assets/img/marker_green.png" alt="">La rivière 09140 Ercé</p>
+</div>
+
+</div>
+</footer>
+
+
+<!------ scroll up --------->
+<a href="#" class="scrollup" id="scroll-up">
+    <i class="ri-arrow-up-line scrollup__icon"></i>
+</a>
+<!-- scroll reveal -->
+<script src="assets/js/scrollreveal.min.js"></script>
+<!-- swiper -->
+ <script src="assets/js/swiper-bundle.min.js"></script>
+ <!-- send mail -->
+<script type="text/javascript" src ="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>	
+<script type="text/javascript">
+(function () {
+emailjs.init( "user_I1HWuX9oE076hNrKEuHTK" );
+})();
+</script>	
+<!-- sweet alert -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+ <!-- main js -->
+<script type="text/javascript" src="assets/js/main.js"></script>
+<!-- lightbox -->
+<script type="text/javascript" src="assets/js/lightbox.js"></script>  
+</body>
+</html>
