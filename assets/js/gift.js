@@ -1,4 +1,5 @@
 const giftModule = {
+    inputs: document.querySelectorAll("input, textarea"),
     handleDisplayForm: function(value) {
         switch (value) {
             case 0:
@@ -37,7 +38,7 @@ const giftModule = {
             : "";
     },
     clearInputsText() {
-        inputs.forEach((input) => {
+        giftModule.inputs.forEach((input) => {
             input.value = "";
             input.parentElement.className = "form__control";
         });

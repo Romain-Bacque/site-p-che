@@ -27,7 +27,6 @@ const appModule = {
         shelterContainer = document.querySelector(".gîtes__container"),
         formContainer = document.getElementById("container__form"),
         formButton = document.querySelectorAll(".form__button"),
-        inputs = document.querySelectorAll("input, textarea"),
         sectionsGitesCadeau = document.querySelectorAll("#cadeau, #gîtes");
 
 
