@@ -6,41 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moniteur guide de pêche en ariège</title>
-    <!--------loader------->
-    <script>
-      let loaderDOM;
-      
-      function loadNow(opacity) {
-      if(opacity <= 0){
-        scrollHeader(); //refresh background header style
-        displayContent();    
-      } else {
-        loaderDOM.style.opacity = opacity;
-        window.setTimeout(()=> {
-        loadNow(opacity - 0.05)
-      }, 50);
-      }
-      }
-      
-      function displayContent(){
-        loaderDOM.style.display = 'none';
-      }
-      
-      window.addEventListener("load", _ =>{
-        loaderDOM = document.getElementById('loader__dom');
-        loadNow(1);
-      });
-    </script>
-
-    <style>      
-        #loader__dom {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        z-index: 2000;
-        background: #F1F2F3 url('assets/img/Spinner.gif') no-repeat center center;
-        }
-    </style>
     <!--------preload-------->
     <link rel=preload  src="assets/img/salat.jpg" as=image>
     <link rel=preload  src="assets/img/l'alet.jpg" as=image>

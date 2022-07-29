@@ -1,52 +1,67 @@
-const navMenu = document.getElementById("nav-menu"),
-  navToggle = document.getElementById("nav-toggle"),
-  navClose = document.getElementById("nav-close");
 
-if (navToggle) {
-  navToggle.addEventListener("click", () => {
-    navMenu.classList.add("show-menu");
-  });
+const appModule = {
+  handleSomeElementsDisplay: function() {
+    if (
+      this.scrollY < sectionsGitesCadeau[1].offsetTop - 600 ||
+      this.scrollY >
+        sectionsGitesCadeau[1].offsetHeight + sectionsGitesCadeau[1].offsetTop
+    ) {
+      animate2(2);
+    }
+    if (
+      this.scrollY < sectionsGitesCadeau[0].offsetTop - 600 ||
+      this.scrollY >
+        sectionsGitesCadeau[0].offsetHeight + sectionsGitesCadeau[0].offsetTop
+    ) {
+      displayForm(0);
+    }
+  },
+  addEventListeners: function() {
+    const navMenu = document.getElementById("nav-menu"),
+        navToggle = document.getElementById("nav-toggle"),
+        navClose = document.getElementById("nav-close"),
+        navLink = document.querySelectorAll(".nav__link"),
+        marker = document.getElementById("marker"),
+        lieuxBanniere = document.querySelector(".lieux__bannière"),
+        panelTitles = document.querySelectorAll(".panneau__text"),
+        shelterContainer = document.querySelector(".gîtes__container"),
+        formContainer = document.getElementById("container__form"),
+        formButton = document.querySelectorAll(".form__button"),
+        inputs = document.querySelectorAll("input, textarea"),
+        sectionsGitesCadeau = document.querySelectorAll("#cadeau, #gîtes");
+
+
+    window.addEventListener("scroll", appModule.handleSomeElementsDisplay)
+    window.addEventListener("load", _ => utilsModule.handleLoadNow(1));
+    window.addEventListener("scroll", headerModule.handleHeaderScroll);
+    navToggle.addEventListener("click", _ => navMenu.classList.add("show-menu"));  
+    navClose.addEventListener("click", _ => navMenu.classList.remove("show-menu"));
+    navLink.forEach(link => link.addEventListener("click", headerModule.handleLinkClick));
+    marker.addEventListener("click", _ => placesModule.handleDescriptionDisplay.bind(null, 0));
+    lieuxBanniere.addEventListener("click", _ => placesModule.handleDescriptionDisplay.bind(null, 1));
+    shelterContainer.addEventListener("click", _ => sheltersModule.handlePicturesDisplay.bind(null, 2));
+    formButton[0].addEventListener("click", _ => giftModule.handleDisplayForm.bind(null, 0));
+    formButton[1].addEventListener("click", _ => giftModule.handleDisplayForm.bind(null, 1));
+  },
+  init: function() {
+    utilsModule.loadNow(1);
+  },
 }
 
-if (navClose) {
-  navClose.addEventListener("click", () => {
-    navMenu.classList.remove("show-menu");
-  });
-}
+window.addEventListener("load", appModule.init);
 
-/*==================== REMOVE MENU MOBILE ====================*/
-const navLink = document.querySelectorAll(".nav__link");
-
-function linkAction() {
-  const navMenu = document.getElementById("nav-menu");
-  // When we click on each nav__link, we remove the show-menu class
-  navMenu.classList.remove("show-menu");
-}
-navLink.forEach((n) => n.addEventListener("click", linkAction));
-
-/*==================== CHANGE BACKGROUND HEADER ====================*/
-function scrollHeader() {
-  const header = document.getElementById("header");
-  const fishLogo = document.querySelector(".nav__logo-fish");
-  // When the scroll is greater than 100 viewport height, add the scroll-header class to the header tag
-  if (scrollY >= 100) header.classList.add("scroll-header");
-  else header.classList.remove("scroll-header");
-  if (scrollY >= 100) fishLogo.classList.add("nav__logo-fish-rotate");
-  else fishLogo.classList.remove("nav__logo-fish-rotate");
-}
-window.addEventListener("scroll", scrollHeader);
 
 /*==================== ALBUM COUNT ====================*/
-var count = document.querySelectorAll(".album__card");
+const count = document.querySelectorAll(".album__card");
 
 count.forEach((i) => {
-  var total = i.querySelectorAll("a");
+  const total = i.querySelectorAll("a");
   i.querySelector(".album__description").innerText =
     total.length + " " + "photos";
 });
 
 /*==================== SWIPER DISCOVER ====================*/
-var swiper = new Swiper(".album__container", {
+const swiper = new Swiper(".album__container", {
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
@@ -58,166 +73,16 @@ var swiper = new Swiper(".album__container", {
   },
 });
 
-/*==================== LIEUX ====================*/
-var elt1 = document.getElementById("marker");
-var elt2 = document.querySelector(".lieux__bannière");
-
-elt1.addEventListener("click", function (e) {
-  e.stopPropagation();
-  animate1(0);
-});
-elt2.addEventListener("click", function (e) {
-  e.stopPropagation();
-  animate1(1);
-});
-
-function animate1(value) {
-  switch (value) {
-    case 0:
-      document.getElementById("description").classList.toggle("description");
-
-      break;
-
-    case 1:
-      document.getElementById("description").classList.remove("description");
-
-    default:
-      console.log(`Sorry, we are out of ${value}.`);
-  }
-}
-
-/*==================== GÎTES ====================*/
-var elt = document.querySelectorAll(".panneau__text");
-
-elt[0].addEventListener("click", function (e) {
-  e.stopPropagation();
-  animate2(0);
-});
-elt[1].addEventListener("click", function (e) {
-  e.stopPropagation();
-  animate2(1);
-});
-document
-  .querySelector(".gîtes__container")
-  .addEventListener("click", function (e) {
-    e.stopPropagation();
-    animate2(2);
-  });
-
-function animate2(value) {
-  var newClass = document.querySelectorAll(".photo__gîte");
-
-  switch (value) {
-    case 0:
-      newClass[1].classList.toggle("gîte2");
-      newClass[0].classList.remove("gîte1");
-
-      break;
-
-    case 1:
-      newClass[0].classList.toggle("gîte1");
-      newClass[1].classList.remove("gîte2");
-
-      break;
-
-    case 2:
-      newClass[0].classList.remove("gîte1");
-      newClass[1].classList.remove("gîte2");
-
-      break;
-
-    default:
-      console.log(`Sorry, we are out of ${value}.`);
-  }
-}
 
 /*==================== CADEAU ====================*/
-var elt = document.getElementById("container__form");
-var btn = document.querySelectorAll(".form__button");
-var inputs = document.querySelectorAll("input, textarea");
 
-//button close formulaire
-btn[0].addEventListener("click", function (e) {
-  e.preventDefault();
-  displayForm(0);
-});
-
-//button accès formulaire
-btn[1].addEventListener("click", function (e) {
-  displayForm(1);
-});
-
-//remove element
-const sectionsGitesCadeau = document.querySelectorAll("#cadeau, #gîtes");
-
-window.onscroll = () => {
-  if (
-    this.scrollY < sectionsGitesCadeau[1].offsetTop - 600 ||
-    this.scrollY >
-      sectionsGitesCadeau[1].offsetHeight + sectionsGitesCadeau[1].offsetTop
-  ) {
-    animate2(2);
-  }
-  if (
-    this.scrollY < sectionsGitesCadeau[0].offsetTop - 600 ||
-    this.scrollY >
-      sectionsGitesCadeau[0].offsetHeight + sectionsGitesCadeau[0].offsetTop
-  ) {
-    displayForm(0);
-  }
-};
-
-//add Form//
-function displayForm(value) {
-  switch (value) {
-    case 0:
-      //remove
-      clear();
-      elt.style.display = "none";
-      elt.classList.remove("container__form");
-
-      break;
-
-    case 1:
-      //add
-      elt.style.display = "flex";
-      elt.classList.add("container__form");
-
-      var dates = document.querySelectorAll(".timepicker");
-
-      for (date of dates) {
-        date.addEventListener("click", (e) => {
-          setAttribute(e);
-        });
-
-        date.addEventListener("input", (e) => {
-          setAttribute(e);
-        });
-      }
-
-      break;
-
-    default:
-      console.log(`Sorry, we are out of ${value}.`);
-  }
-}
-
-//set attribute
-const setAttribute = (e) => {
-  e.target.setAttribute("min", dateLimit(0));
-  e.target.setAttribute("max", dateLimit(2));
-  form.elements.todate.setAttribute("min", form.elements.fromdate.value);
-  form.elements.todate.value < form.elements.fromdate.value
-    ? (form.elements.todate.value = form.elements.fromdate.value)
-    : "";
-};
 
 //max date
 function dateLimit(value) {
-  var today = new Date();
-  var dd = today.getDate();
-  var mm = today.getMonth() + 1; //January is 0!
-  var yyyy = today.getFullYear() + value;
+  const today = new Date();
+  const dd = today.getDate();
+  const mm = today.getMonth() + 1; //January is 0!
+  const yyyy = today.getFullYear() + value;
 
   if (dd < 10) {
     dd = "0" + dd;
@@ -235,8 +100,6 @@ const firstName = document.getElementById("user__firstname");
 const lastName = document.getElementById("user__lastname");
 const email = document.getElementById("user__email");
 const tel = document.getElementById("user__tel");
-// const fromDate = document.getElementById('fromdate');
-// const toDate = document.getElementById('todate');
 const msg = document.getElementById("msg");
 const loader = document.getElementById("loader");
 
@@ -325,18 +188,6 @@ function checkInputs() {
   } else {
     setSuccessFor(tel);
   }
-
-  // if(!fromDateValue){
-  //     setErrorFor(fromDate, champsVide);
-  // }else{
-  // setSuccessFor(fromDate);
-  // }
-
-  // if(!toDateValue){
-  //     setErrorFor(toDate, champsVide);
-  // }else{
-  // setSuccessFor(toDate);
-  // }
 }
 
 function setErrorFor(input, message) {
@@ -357,14 +208,6 @@ function setSuccessFor(input) {
   formControl.className = "form__control success";
 
   sendMail();
-}
-
-//clear
-function clear() {
-  inputs.forEach((i) => {
-    i.value = "";
-    i.parentElement.className = "form__control";
-  });
 }
 
 //onChange

@@ -175,6 +175,15 @@ footer {
   gap: 1.5rem;
 }
 
+/*----------loader----------*/
+#loader__dom {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  background: #F1F2F3 url('../img/Spinner.gif') no-repeat center center;
+}
+
 /*----------header----------*/
 .header {
   width: 100%;
