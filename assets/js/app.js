@@ -5,10 +5,11 @@ const appModule = {
     appModule.loader(1);
     appModule.addEventActions();
     albumModule.albumInit();
+    appModule.initIntersectionObserver();
   },
   handleLoader: function(opacity) {
-      if(opacity <= 0){
-        scrollHeader();
+      if(opacity <= 0) {
+        headerModule.handleHeaderScroll();
         appModule.loaderDOM.style.display = "none";  
       } else {
         appModule.loaderDOM.style.opacity = opacity;
@@ -28,8 +29,10 @@ const appModule = {
         shelterContainer = document.querySelector(".gîtes__container"),
         formButton = document.querySelectorAll(".form__button"),
         form = document.getElementById("form"),
-        inputs = document.querySelectorAll("input, textarea");
-    
+        inputs = document.querySelectorAll("input, textarea"),
+        videoButton = document.getElementById("video-button"),
+        videoFile = document.getElementById("video-file");
+
     window.addEventListener("scroll", appModule.handleSomeElementsDisplay)
     window.addEventListener("load", _ => appModule.handleLoader(1));
     window.addEventListener("scroll", headerModule.handleHeaderScroll);
@@ -45,6 +48,8 @@ const appModule = {
     formButton[1].addEventListener("click", _ => giftModule.handleDisplayForm.bind(null, 1));
     form.addEventListener("submit", giftModule.handleFormSubmit);
     inputs.forEach(input => input.addEventListener("input", _ => giftModule.handleInputChange(input)));
+    videoButton.addEventListener("click", albumModule.handleVideo);
+    videoFile.addEventListener("ended",  albumModule.handleVideoEnding);
   },
   handleSomeElementsDisplay: function() {
     const shelterAndGifSections = document.querySelectorAll("#cadeau, #gîtes");
@@ -62,25 +67,25 @@ const appModule = {
       giftModule.hideForm();
     }
   },
-  albumInit: function() {
-    const cards = document.querySelectorAll(".album__card");
-
-    cards.forEach((card) => {
-    const cardLinks = card.querySelectorAll("a");
+  initIntersectionObserver: function() {
+    const options = {
+      root: null,
+      rootMargin: "-10% 0px",
+      treshold: 0,
+    };
     
-    card.querySelector(".album__description").innerText = `${cardLinks.length} photos`;
-    });
-
-    albumModule.swiper = new Swiper(".album__container", {
-        effect: "coverflow",
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: "auto",
-        loop: true,
-        spaceBetween: 32,
-        coverflowEffect: {
-            rotate: 0,
-        },
+    const handleIntersect = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("reveal");
+        } else entry.target.classList.add("reveal");
+      });
+    };
+    
+    const observer = new IntersectionObserver(handleIntersect, options);
+    
+    document.querySelectorAll(".reveal, .reveal-box").forEach(reveal => {
+      observer.observe(reveal);
     });
   }
 }
@@ -92,30 +97,7 @@ window.addEventListener("load", appModule.init);
 
 
 /*==================== VIDEO ====================*/
-const videoFile = document.getElementById("video-file"),
-    videoButton = document.getElementById("video-button"),
-    videoIcon = document.getElementById("video-icon");
 
-function playPause() {
-  if (videoFile.paused) {
-    videoFile.play();
-    videoIcon.classList.add("ri-pause-line");
-    videoIcon.classList.remove("ri-play-line");
-  } else {
-    videoFile.pause();
-    videoIcon.classList.remove("ri-pause-line");
-    videoIcon.classList.add("ri-play-line");
-  }
-}
-
-videoButton.addEventListener("click", playPause);
-
-const finalVideo = () => {
-  videoIcon.classList.remove("ri-pause-line");
-  videoIcon.classList.add("ri-play-line");
-};
-
-videoFile.addEventListener("ended", finalVideo);
 
 /*==================== SHOW SCROLL TOP ====================*/
 function scrollUp() {
@@ -183,26 +165,4 @@ themeButton.addEventListener("click", () => {
   // We save the theme and the current icon that the user chose
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
-});
-
-// scroll reveal animation
-const options = {
-  root: null,
-  rootMargin: "-10% 0px",
-  treshold: 0, //0% de l'élément à reveler doit être visible
-};
-
-const handleIntersect = function (entries, observer) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      //intersectionRatio permet de savoir le ratio de l'élément visible (le pourcentage), ex: 0.12656554262.
-      entry.target.classList.remove("reveal");
-    } else entry.target.classList.add("reveal");
-  });
-};
-
-const observer = new IntersectionObserver(handleIntersect, options);
-
-document.querySelectorAll(".reveal, .reveal-box").forEach(function (r) {
-  observer.observe(r);
 });

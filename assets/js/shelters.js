@@ -4,20 +4,20 @@ const sheltersModule = {
         event.stopPropagation();
 
         switch (value) {
-        case 0:
-            sheltersModule.toogleShelter1();
-        break;
-    
-        case 1:
-            sheltersModule.toogleShelter2();
-        break;
-    
-        case 2:
-            sheltersModule.hideShelters();
-        break;
-    
-        default:
-            console.log(`Sorry, we are out of ${value}.`);
+            case 0:
+                sheltersModule.toogleShelter1();
+            break;
+        
+            case 1:
+                sheltersModule.toogleShelter2();
+            break;
+        
+            case 2:
+                sheltersModule.hideShelters();
+            break;
+        
+            default:
+                console.log(`Sorry, we are out of ${value}.`);
         }
     },
     toogleShelter1: function() {

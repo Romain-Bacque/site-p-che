@@ -13,17 +13,10 @@ const giftModule = {
         giftModule.checkInputs();
     },
     handleDisplayForm: function(value) {
-        switch (value) {
-            case 0:
-                giftModule.hideForm();
-            break;
-        
-            case 1:
-                giftModule.showForm();
-            break;
-        
-            default:
-                console.log(`Sorry, we are out of ${value}.`);
+        if (value === 0) {
+            giftModule.hideForm();
+        } else if (value === 1) {
+            giftModule.showForm();
         }
     },
     handleInputChange: function(input) {
