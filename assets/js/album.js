@@ -2,7 +2,7 @@ const albumModule = {
     swiper: null,
     videoFile: document.getElementById("video-file"),
     videoIcon: document.getElementById("video-icon"),
-    albumInit: function() {
+    initAlbum: function() {
         const cards = document.querySelectorAll(".album__card");
 
         cards.forEach((card) => {

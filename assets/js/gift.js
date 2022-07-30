@@ -57,6 +57,7 @@ const giftModule = {
         
         giftModule.formContainer.style.display = "flex";
         giftModule.formContainer.classList.add("container__form");
+
         for (date of dates) {
             date.addEventListener("click", _ => giftModule.handleMinAndMaxDate);   
             date.addEventListener("input", _ => giftModule.handleMinAndMaxDate);
@@ -122,11 +123,13 @@ const giftModule = {
                 giftModule.loader.style.display = "none";
                 giftModule.makeSuccessModal();
                 giftModule.clearInputsText();
+
                 console.log("SUCCESS!", response.status, response.text);
             },
             error => {
                 giftModule.loader.style.display = "none";
                 giftModule.makeErrorModal();
+                
                 console.log("FAILED...", error);
             }
         );

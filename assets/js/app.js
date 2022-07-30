@@ -2,11 +2,11 @@
 const appModule = {
   loaderDOM: document.getElementById('loader__dom'),
   init: function() {
-    appModule.loader(1);
-    appModule.addEventActions();
+    appModule.handlePageLoader(1);
     appModule.initTheme();
-    albumModule.albumInit();
+    albumModule.initAlbum();
     appModule.initIntersectionObserver();
+    appModule.addEventActions();
   },
   handlePageLoader: function(opacity) {
       if(opacity <= 0) {
@@ -35,6 +35,27 @@ const appModule = {
       );
     }
   },
+  initIntersectionObserver: function() {
+    const options = {
+      root: null,
+      rootMargin: "-10% 0px",
+      treshold: 0,
+    };
+    
+    const handleIntersect = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("reveal");
+        } else entry.target.classList.add("reveal");
+      });
+    };
+    
+    const observer = new IntersectionObserver(handleIntersect, options);
+    
+    document.querySelectorAll(".reveal, .reveal-box").forEach(reveal => {
+      observer.observe(reveal);
+    });
+  },
   addEventActions: function() {
     const navMenu = document.getElementById("nav-menu"),
         navToggle = document.getElementById("nav-toggle"),
@@ -57,7 +78,6 @@ const appModule = {
       appModule.handleActiveNavLink();
       headerModule.handleHeaderScroll();
     });
-    window.addEventListener("load", _ => appModule.handlePageLoader(1));
     navToggle.addEventListener("click", _ => navMenu.classList.add("show-menu"));  
     navClose.addEventListener("click", _ => navMenu.classList.remove("show-menu"));
     navLink.forEach(link => link.addEventListener("click", headerModule.handleLinkClick));
@@ -89,6 +109,7 @@ const appModule = {
       const sectionTop = section.offsetTop - 50;
 
       sectionId = section.getAttribute("id");
+      
       if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
         document
           .querySelector(`.nav__menu a[href*="${sectionId}"]`)
@@ -115,27 +136,6 @@ const appModule = {
     ) {
       giftModule.hideForm();
     }
-  },
-  initIntersectionObserver: function() {
-    const options = {
-      root: null,
-      rootMargin: "-10% 0px",
-      treshold: 0,
-    };
-    
-    const handleIntersect = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.remove("reveal");
-        } else entry.target.classList.add("reveal");
-      });
-    };
-    
-    const observer = new IntersectionObserver(handleIntersect, options);
-    
-    document.querySelectorAll(".reveal, .reveal-box").forEach(reveal => {
-      observer.observe(reveal);
-    });
   }
 }
 
