@@ -60,22 +60,6 @@ const giftModule = {
             date.addEventListener("input", _ => giftModule.handleMinAndMaxDate);
         }
     },
-    makeSuccessModal: function() {
-        swal({
-            title: "Demande Envoyée avec succès !",
-            text: "Selon mes disponibilités, je la confirmerai par mail.",
-            icon: "success",
-            button: "OK",
-        });
-    },  
-    makeErrorModal: function() {
-        swal({
-            title: "Oups...",
-            text: "Echec de l'envoi de la demande",
-            icon: "error",
-            button: "OK",
-        });
-    },  
     checkInputs: function() {
         const firstNameValue = firstName.value.trim(),
             lastNameValue = lastName.value.trim(),
@@ -120,39 +104,55 @@ const giftModule = {
         formControl.className = "form__control success";
         giftModule.sendMail();
     },
-    clearInputsText: function() {
-            giftModule.inputs.forEach((input) => {
-                input.value = "";
-                input.parentElement.className = "form__control";
-            });
-    },
     sendMail: function() {
         loader.style.display = "flex";
-    
+        
         emailjs
-            .send(utilsModule.emailjs_service, utilsModule.emailjs_template, {
-                firstName: firstName.value,
-                lastName: lastName.value,
-                email: email.value,
-                tel: tel.value,
-                msg: msg.value != "" ? msg.value : "Aucune information complémentaire.",
-            })
-            .then(
-                response => {
-                    loader.style.display = "none";
-                    giftModule.makeSuccessModal();
-                    giftModule.clearInputsText();
-                    console.log("SUCCESS!", response.status, response.text);
-                },
-                error => {
-                    loader.style.display = "none";
-                    giftModule.makeErrorModal();
-                    console.log("FAILED...", error);
-                }
+        .send(utilsModule.emailjs_service, utilsModule.emailjs_template, {
+            firstName: firstName.value,
+            lastName: lastName.value,
+            email: email.value,
+            tel: tel.value,
+            msg: msg.value != "" ? msg.value : "Aucune information complémentaire.",
+        })
+        .then(
+            response => {
+                loader.style.display = "none";
+                giftModule.makeSuccessModal();
+                giftModule.clearInputsText();
+                console.log("SUCCESS!", response.status, response.text);
+            },
+            error => {
+                loader.style.display = "none";
+                giftModule.makeErrorModal();
+                console.log("FAILED...", error);
+            }
             );
-    }
+    },
+    makeSuccessModal: function() {
+        swal({
+            title: "Demande Envoyée avec succès !",
+            text: "Selon mes disponibilités, je la confirmerai par mail.",
+            icon: "success",
+            button: "OK",
+        });
+    },  
+    makeErrorModal: function() {
+        swal({
+            title: "Oups...",
+            text: "Echec de l'envoi de la demande",
+            icon: "error",
+            button: "OK",
+        });
+    },  
+    clearInputsText: function() {
+        giftModule.inputs.forEach((input) => {
+            input.value = "";
+            input.parentElement.className = "form__control";
+        });
+    },
 }
-
+    
 // var form = document.getElementById("form");
 
 // //add Form//
