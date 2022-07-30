@@ -31,3 +31,5 @@ const headerModule = {
         else fishLogo.classList.remove("nav__logo-fish-rotate");
     }
 }
+
+module.exports = headerModule;

@@ -9,3 +9,5 @@ const placesModule = {
         }
     }
 }
+
+module.exports = placesModule;

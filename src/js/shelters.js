@@ -33,3 +33,5 @@ const sheltersModule = {
         sheltersModule.newClass[1].classList.remove("gîte2");
     },
 }
+
+module.exports = sheltersModule;

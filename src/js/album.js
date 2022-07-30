@@ -38,3 +38,5 @@ const albumModule = {
         albumModule.videoIcon.classList.add("ri-play-line");
     }
 }
+
+module.exports = albumModule;

@@ -1,5 +1,5 @@
 
-const utilsModule = require('./utils');
+const utilsModule = require('./js/utils');
 
 const giftModule = {
     formContainer: document.getElementById("container__form"),
@@ -160,3 +160,5 @@ const giftModule = {
         });
     },
 }
+
+module.exports = giftModule;
