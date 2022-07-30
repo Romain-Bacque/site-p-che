@@ -25,14 +25,14 @@ const giftModule = {
     handleMinAndMaxDate: function(event) { 
         const form = document.getElementById("form");
 
-        event.target.setAttribute("min", giftModule.setLimitDate(0));
-        event.target.setAttribute("max", giftModule.setLimitDate(2));
+        event.target.setAttribute("min", giftModule.getLimitDate(0));
+        event.target.setAttribute("max", giftModule.getLimitDate(2));
         form.elements.todate.setAttribute("min", form.elements.fromdate.value);
         form.elements.todate.value < form.elements.fromdate.value
             ? (form.elements.todate.value = form.elements.fromdate.value)
             : "";
     },
-    setLimitDate: function(value) {
+    getLimitDate: function(value) {
         const today = new Date();
         const day = today.getDate();
         const month = today.getMonth() + 1;
@@ -129,7 +129,7 @@ const giftModule = {
             error => {
                 giftModule.loader.style.display = "none";
                 giftModule.makeErrorModal();
-                
+
                 console.log("FAILED...", error);
             }
         );
