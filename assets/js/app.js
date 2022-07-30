@@ -25,8 +25,9 @@ const appModule = {
         lieuxBanniere = document.querySelector(".lieux__bannière"),
         panelTitles = document.querySelectorAll(".panneau__text"),
         shelterContainer = document.querySelector(".gîtes__container"),
-        formButton = document.querySelectorAll(".form__button");
-        
+        formButton = document.querySelectorAll(".form__button"),
+        form = document.getElementById("form");
+    
     window.addEventListener("scroll", appModule.handleSomeElementsDisplay)
     window.addEventListener("load", _ => utilsModule.handleLoadNow(1));
     window.addEventListener("scroll", headerModule.handleHeaderScroll);
@@ -40,6 +41,7 @@ const appModule = {
     shelterContainer.addEventListener("click", _ => sheltersModule.handlePicturesDisplay.bind(null, 2));
     formButton[0].addEventListener("click", _ => giftModule.handleDisplayForm.bind(null, 0));
     formButton[1].addEventListener("click", _ => giftModule.handleDisplayForm.bind(null, 1));
+    form.addEventListener("submit", giftModule.handleFormSubmit);
   },
   init: function() {
     utilsModule.loadNow(1);
@@ -74,139 +76,13 @@ const swiper = new Swiper(".album__container", {
 
 /*==================== CADEAU ====================*/
 
-
-//max date
-function setLimitDate(value) {
-  const today = new Date();
-  const dd = today.getDate();
-  const mm = today.getMonth() + 1;
-  const yyyy = today.getFullYear() + value;
-
-  if (dd < 10) {
-    dd = "0" + dd;
-  }
-  if (mm < 10) {
-    mm = "0" + mm;
-  }
-
-  return yyyy + "-" + mm + "-" + dd;
-}
-
-//Form managing
-const form = document.getElementById("form");
+//Form email managing
 const firstName = document.getElementById("user__firstname");
 const lastName = document.getElementById("user__lastname");
 const email = document.getElementById("user__email");
 const tel = document.getElementById("user__tel");
 const msg = document.getElementById("msg");
 const loader = document.getElementById("loader");
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  checkInputs();
-});
-
-function sendMail() {
-  loader.style.display = "flex";
-
-  emailjs
-    .send("service_ruzv3v1", "template_y6oarwo", {
-      firstName: firstName.value,
-      lastName: lastName.value,
-      email: email.value,
-      tel: tel.value,
-      // fromDate: fromDate.value,
-      // toDate: toDate.value,
-      msg: msg.value != "" ? msg.value : "aucune information complémentaire.",
-    })
-    .then(
-      function (response) {
-        loader.style.display = "none";
-        success();
-        clear();
-        console.log("SUCCESS!", response.status, response.text);
-      },
-      function (err) {
-        loader.style.display = "none";
-        error();
-        console.log("FAILED...", error);
-      }
-    );
-}
-
-function success() {
-  swal({
-    title: "Demande Envoyée avec succès !",
-    text: "Selon mes disponibilités, je la confirmerai par mail.",
-    icon: "success",
-    button: "OK",
-  });
-}
-
-function error() {
-  swal({
-    title: "Oups...",
-    text: "Echec de l'envoi de la demande",
-    icon: "error",
-    button: "OK",
-  });
-}
-
-function checkInputs() {
-  //get the value from the input
-  const firstNameValue = firstName.value.trim();
-  const lastNameValue = lastName.value.trim();
-  const emailValue = email.value.trim();
-  const telValue = tel.value.trim();
-  // const fromDateValue = fromDate.value.trim();
-  // const toDateValue = toDate.value.trim();
-  const emptyField = "Le champs ne doit pas être vide";
-
-  if (firstNameValue === "") {
-    setErrorFor(firstName, emptyField);
-  } else {
-    setSuccessFor(firstName);
-  }
-
-  if (lastNameValue === "") {
-    setErrorFor(lastName, emptyField);
-  } else {
-    setSuccessFor(lastName);
-  }
-
-  if (emailValue === "") {
-    setErrorFor(email, emptyField);
-  } else {
-    setSuccessFor(email);
-  }
-
-  if (telValue === "") {
-    setErrorFor(tel, emptyField);
-  } else {
-    setSuccessFor(tel);
-  }
-}
-
-function setErrorFor(input, message) {
-  const formControl = input.parentElement; //.form__control
-  const small = formControl.querySelector("small");
-
-  // add error message inside small
-  small.innerText = message;
-
-  // add error class
-  formControl.className = "form__control error";
-}
-
-function setSuccessFor(input) {
-  const formControl = input.parentElement; //.form__control
-
-  // add success class
-  formControl.className = "form__control success";
-
-  sendMail();
-}
 
 //onChange
 inputs.forEach((input) => {
