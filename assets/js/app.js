@@ -1,22 +1,22 @@
 
 const appModule = {
   handleSomeElementsDisplay: function() {
+    const shelterAndGifSections = document.querySelectorAll("#cadeau, #gîtes");
+
     if (
-      this.scrollY < sectionsGitesCadeau[1].offsetTop - 600 ||
-      this.scrollY >
-        sectionsGitesCadeau[1].offsetHeight + sectionsGitesCadeau[1].offsetTop
+      window.scrollY < shelterAndGifSections[1].offsetTop - 600 ||
+      window.scrollY > shelterAndGifSections[1].offsetHeight + shelterAndGifSections[1].offsetTop
     ) {
-      animate2(2);
+      sheltersModule.hideShelters();
     }
     if (
-      this.scrollY < sectionsGitesCadeau[0].offsetTop - 600 ||
-      this.scrollY >
-        sectionsGitesCadeau[0].offsetHeight + sectionsGitesCadeau[0].offsetTop
+      window.scrollY < shelterAndGifSections[0].offsetTop - 600 ||
+      window.scrollY > shelterAndGifSections[0].offsetHeight + shelterAndGifSections[0].offsetTop
     ) {
-      displayForm(0);
+      giftModule.hideForm();
     }
   },
-  addEventListeners: function() {
+  addEventActions: function() {
     const navMenu = document.getElementById("nav-menu"),
         navToggle = document.getElementById("nav-toggle"),
         navClose = document.getElementById("nav-close"),
@@ -25,11 +25,8 @@ const appModule = {
         lieuxBanniere = document.querySelector(".lieux__bannière"),
         panelTitles = document.querySelectorAll(".panneau__text"),
         shelterContainer = document.querySelector(".gîtes__container"),
-        formContainer = document.getElementById("container__form"),
-        formButton = document.querySelectorAll(".form__button"),
-        sectionsGitesCadeau = document.querySelectorAll("#cadeau, #gîtes");
-
-
+        formButton = document.querySelectorAll(".form__button");
+        
     window.addEventListener("scroll", appModule.handleSomeElementsDisplay)
     window.addEventListener("load", _ => utilsModule.handleLoadNow(1));
     window.addEventListener("scroll", headerModule.handleHeaderScroll);
@@ -37,13 +34,16 @@ const appModule = {
     navClose.addEventListener("click", _ => navMenu.classList.remove("show-menu"));
     navLink.forEach(link => link.addEventListener("click", headerModule.handleLinkClick));
     marker.addEventListener("click", _ => placesModule.handleDescriptionDisplay.bind(null, 0));
-    lieuxBanniere.addEventListener("click", _ => placesModule.handleDescriptionDisplay.bind(null, 1));
+    lieuxBanniere.addEventListener("click", _ => placesModule.handleDescriptionDisplay.bind(null, 1));       
+    panelTitles[0].addEventListener("click", _ => sheltersModule.handlePicturesDisplay.bind(null, 0));
+    panelTitles[1].addEventListener("click", _ => sheltersModule.handlePicturesDisplay.bind(null, 1));
     shelterContainer.addEventListener("click", _ => sheltersModule.handlePicturesDisplay.bind(null, 2));
     formButton[0].addEventListener("click", _ => giftModule.handleDisplayForm.bind(null, 0));
     formButton[1].addEventListener("click", _ => giftModule.handleDisplayForm.bind(null, 1));
   },
   init: function() {
     utilsModule.loadNow(1);
+    appModule.addEventActions();
   },
 }
 
@@ -51,12 +51,11 @@ window.addEventListener("load", appModule.init);
 
 
 /*==================== ALBUM COUNT ====================*/
-const count = document.querySelectorAll(".album__card");
+const cards = document.querySelectorAll(".album__card");
 
-count.forEach((i) => {
-  const total = i.querySelectorAll("a");
-  i.querySelector(".album__description").innerText =
-    total.length + " " + "photos";
+cards.forEach((card) => {
+  const cardLinks = card.querySelectorAll("a");
+  card.querySelector(".album__description").innerText = `${cardLinks.length} photos`;
 });
 
 /*==================== SWIPER DISCOVER ====================*/
@@ -77,10 +76,10 @@ const swiper = new Swiper(".album__container", {
 
 
 //max date
-function dateLimit(value) {
+function setLimitDate(value) {
   const today = new Date();
   const dd = today.getDate();
-  const mm = today.getMonth() + 1; //January is 0!
+  const mm = today.getMonth() + 1;
   const yyyy = today.getFullYear() + value;
 
   if (dd < 10) {
@@ -162,28 +161,28 @@ function checkInputs() {
   const telValue = tel.value.trim();
   // const fromDateValue = fromDate.value.trim();
   // const toDateValue = toDate.value.trim();
-  const champsVide = "Le Champs ne doit pas être vide";
+  const emptyField = "Le champs ne doit pas être vide";
 
   if (firstNameValue === "") {
-    setErrorFor(firstName, champsVide);
+    setErrorFor(firstName, emptyField);
   } else {
     setSuccessFor(firstName);
   }
 
   if (lastNameValue === "") {
-    setErrorFor(lastName, champsVide);
+    setErrorFor(lastName, emptyField);
   } else {
     setSuccessFor(lastName);
   }
 
   if (emailValue === "") {
-    setErrorFor(email, champsVide);
+    setErrorFor(email, emptyField);
   } else {
     setSuccessFor(email);
   }
 
   if (telValue === "") {
-    setErrorFor(tel, champsVide);
+    setErrorFor(tel, emptyField);
   } else {
     setSuccessFor(tel);
   }
@@ -210,28 +209,26 @@ function setSuccessFor(input) {
 }
 
 //onChange
-inputs.forEach((i) => {
-  i.addEventListener("input", () => {
-    if (i.value === "") {
-      i.parentElement.className = "form__control";
+inputs.forEach((input) => {
+  input.addEventListener("input", _ => {
+    if (input.value === "") {
+      input.parentElement.className = "form__control";
     }
   });
 });
 
 /*==================== VIDEO ====================*/
 const videoFile = document.getElementById("video-file"),
-  videoButton = document.getElementById("video-button"),
-  videoIcon = document.getElementById("video-icon");
+    videoButton = document.getElementById("video-button"),
+    videoIcon = document.getElementById("video-icon");
 
 function playPause() {
   if (videoFile.paused) {
     videoFile.play();
-
     videoIcon.classList.add("ri-pause-line");
     videoIcon.classList.remove("ri-play-line");
   } else {
     videoFile.pause();
-
     videoIcon.classList.remove("ri-pause-line");
     videoIcon.classList.add("ri-play-line");
   }
@@ -290,10 +287,8 @@ const selectedTheme = localStorage.getItem("selected-theme");
 const selectedIcon = localStorage.getItem("selected-icon");
 
 // We obtain the current theme that the interface has by validating the dark-theme class
-const getCurrentTheme = () =>
-  document.body.classList.contains(darkTheme) ? "dark" : "light";
-const getCurrentIcon = () =>
-  themeButton.classList.contains(iconTheme) ? "ri-moon-line" : "ri-sun-line";
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? "dark" : "light";
+const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? "ri-moon-line" : "ri-sun-line";
 
 // We validate if the user previously chose a topic
 if (selectedTheme) {
