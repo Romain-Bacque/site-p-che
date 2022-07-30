@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "tinyify": "^3.1.0"
+  },
+  "name": "site-peche",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:dev": "browserify -e src/app.js -o assets/js/bundle.js",
+		"build:prod": "browserify -e src/app.js -o assets/js/bundle.min.js -p tinyify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Romain-Bacque/site-peche.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Romain-Bacque/site-peche/issues"
+  },
+  "homepage": "https://github.com/Romain-Bacque/site-peche#readme"
+}
