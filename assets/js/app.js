@@ -6,6 +6,7 @@ const appModule = {
     appModule.initTheme();
     albumModule.initAlbum();
     appModule.initIntersectionObserver();
+    appModule.initEmailjs();
     appModule.addEventActions();
   },
   handlePageLoader: function(opacity) {
@@ -54,6 +55,9 @@ const appModule = {
     document.querySelectorAll(".reveal, .reveal-box").forEach(reveal => {
       observer.observe(reveal);
     });
+  },
+  initEmailjs: function() {
+      emailjs.init(utilsModule.emailjs_user);
   },
   addEventActions: function() {
     window.addEventListener("scroll", _ => {
