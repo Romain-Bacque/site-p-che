@@ -53,8 +53,8 @@
   --mb-2-5: 2.5rem;
 
   /*--------------z-index-------------*/
-  --z-tooltip: 10;
-  --z-fixed: 100;
+  --z-tooltip: 2;
+  --z-fixed: 4;
 
   /*------------Hover overlay---------*/
   --img-transition: 0.3s;
@@ -941,6 +941,7 @@ header .nav {
   left: 50%;
   width: 200px;
   transform: rotate(-10deg) translateX(-50%);
+  z-index: 3;
 }
 
 #img__panneau {
@@ -1368,7 +1369,7 @@ button[type="submit"]:hover {
   border-radius: 50%;
   opacity: 0.2;
   animation: flying 10s infinite ease-in;
-  z-index: z-tooltip;
+  z-index: var(--z-tooltip);
 }
 
 .bubble:nth-child(1) {
@@ -1668,7 +1669,7 @@ tr:nth-child(3) {
 
 /* ----album---- */
 .album__container {
-  border: none;
+  overflow: hidden;
 }
 
 .album__card {
@@ -1774,7 +1775,7 @@ tr:nth-child(3) {
   padding: 0.5rem;
   display: flex;
   opacity: 0.9;
-  z-index: var(--z-tooltip);
+  z-index: var(--z-fixed);
   transition: 0.4s;
 }
 
@@ -1847,7 +1848,6 @@ body.dark-theme {
 /*-------- Media queries ---------*/
 
 /*-------- for small devices ---------*/
-
 @media all and (orientation: landscape) {
   .nav__dark {
     left: 70%;
@@ -1878,7 +1878,6 @@ body.dark-theme {
 }
 
 /* -------- for medium devices --------- */
-
 @media screen and (max-width: 568px) {
   .lieux__techniques {
     border: none;

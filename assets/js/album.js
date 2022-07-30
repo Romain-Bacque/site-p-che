@@ -1,5 +1,4 @@
 const albumModule = {
-    swiper: null,
     videoFile: document.getElementById("video-file"),
     videoIcon: document.getElementById("video-icon"),
     initAlbum: function() {
@@ -11,7 +10,7 @@ const albumModule = {
             card.querySelector(".album__description").innerText = `${cardLinks.length} photos`;
         });
 
-        albumModule.swiper = new Swiper(".album__container", {
+        new Swiper(".album__container", {
             effect: "coverflow",
             grabCursor: true,
             centeredSlides: true,

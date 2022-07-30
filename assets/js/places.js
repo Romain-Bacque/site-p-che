@@ -1,6 +1,7 @@
 const placesModule = {
     handleDescriptionDisplay: function(value, event) {
         event.stopPropagation();
+        console.log('value')
 
         if(value === 0) {
             document.getElementById("description").classList.toggle("description");

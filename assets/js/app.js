@@ -73,24 +73,25 @@ const appModule = {
     navLink.forEach(link => link.addEventListener("click", headerModule.handleLinkClick));
 
     const themeButton = document.getElementById("theme-button");
-    themeButton.addEventListener("click", _ => headerModule.handleTheme);
+    themeButton.addEventListener("click", headerModule.handleTheme);
 
     const marker = document.getElementById("marker");
-    marker.addEventListener("click", _ => placesModule.handleDescriptionDisplay.bind(null, 0));
+    marker.addEventListener("click", placesModule.handleDescriptionDisplay.bind(null, 0));
 
     const lieuxBanniere = document.querySelector(".lieux__bannière");
-    lieuxBanniere.addEventListener("click", _ => placesModule.handleDescriptionDisplay.bind(null, 1));       
+    lieuxBanniere.addEventListener("click", placesModule.handleDescriptionDisplay.bind(null, 1));       
 
     const panelTitles = document.querySelectorAll(".panneau__text");
-    panelTitles[0].addEventListener("click", _ => sheltersModule.handlePicturesDisplay.bind(null, 0));
-    panelTitles[1].addEventListener("click", _ => sheltersModule.handlePicturesDisplay.bind(null, 1));
+    console.log(panelTitles)
+    panelTitles[0].addEventListener("click", sheltersModule.handlePicturesDisplay.bind(null, 0));
+    panelTitles[1].addEventListener("click", sheltersModule.handlePicturesDisplay.bind(null, 1));
 
     const shelterContainer = document.querySelector(".gîtes__container");
-    shelterContainer.addEventListener("click", _ => sheltersModule.handlePicturesDisplay.bind(null, 2));
+    shelterContainer.addEventListener("click", sheltersModule.handlePicturesDisplay.bind(null, 2));
 
     const formButton = document.querySelectorAll(".form__button");
-    formButton[0].addEventListener("click", _ => giftModule.handleDisplayForm.bind(null, 0));
-    formButton[1].addEventListener("click", _ => giftModule.handleDisplayForm.bind(null, 1));
+    formButton[0].addEventListener("click", giftModule.handleDisplayForm.bind(null, 0));
+    formButton[1].addEventListener("click", giftModule.handleDisplayForm.bind(null, 1));
 
     const form = document.getElementById("form");
     form.addEventListener("submit", giftModule.handleFormSubmit);

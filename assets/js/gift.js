@@ -59,8 +59,8 @@ const giftModule = {
         giftModule.formContainer.classList.add("container__form");
 
         for (date of dates) {
-            date.addEventListener("click", _ => giftModule.handleMinAndMaxDate);   
-            date.addEventListener("input", _ => giftModule.handleMinAndMaxDate);
+            date.addEventListener("click", giftModule.handleMinAndMaxDate);   
+            date.addEventListener("input", giftModule.handleMinAndMaxDate);
         }
     },
     checkInputs: function() {

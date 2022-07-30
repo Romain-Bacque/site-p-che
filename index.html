@@ -11,24 +11,32 @@
   <link rel=preload src="assets/img/l'alet.jpg" as=image>
   <link rel=preload src="assets/img/garbet.jpg" as=image>
   <link rel=preload src="assets/img/arac.jpg" as=image>
-  <!--------favicon------->
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <!--------remix icon------->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
-  </link>
-  <!--------swipper------->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <!--------font awesome icon------->
+  <!--------font awesome kit------->
   <script src="https://kit.fontawesome.com/8a4e4c7259.js" crossorigin="anonymous"></script>
   <!------- LightBox -------->
-  <link rel="stylesheet" href="assets/css/lightbox.min.css">
-  </link>
-  <script type="text/javascript" src="assets/js/lightbox-plus-jquery.min.js"></script>
+  <link rel="stylesheet" href="assets/css/lightbox.min.css" />
+  <script type="text/javascript" src="assets/js/lib/lightbox-plus-jquery.min.js"></script>
+  <!-- scroll reveal -->
+  <script src="assets/js/lib/scrollreveal.min.js"></script>
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- send mail -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("user_I1HWuX9oE076hNrKEuHTK");
+    })();
+  </script>
+  <!-- sweet alert -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <!-- lightbox -->
+  <script type="text/javascript" src="assets/js/lib/lightbox.js"></script>
   <!--------main css--------->
-  <link rel="stylesheet" href="assets/css/style.css">
-  </link>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
@@ -789,23 +797,13 @@
     </div>
 
   </footer>
-  <!-- scroll reveal -->
-  <script src="assets/js/scrollreveal.min.js"></script>
-  <!-- swiper -->
-  <script src="assets/js/swiper-bundle.min.js"></script>
-  <!-- send mail -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function () {
-      emailjs.init("user_I1HWuX9oE076hNrKEuHTK");
-    })();
-  </script>
-  <!-- sweet alert -->
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <!-- main js -->
-  <script type="text/javascript" src="assets/js/main.js"></script>
-  <!-- lightbox -->
-  <script type="text/javascript" src="assets/js/lightbox.js"></script>
+  <script type="text/javascript" src="assets/js/app.js"></script>
+  <script type="text/javascript" src="assets/js/album.js"></script>
+  <script type="text/javascript" src="assets/js/gift.js"></script>
+  <script type="text/javascript" src="assets/js/header.js"></script>
+  <script type="text/javascript" src="assets/js/places.js"></script>
+  <script type="text/javascript" src="assets/js/shelters.js"></script>
+  <script type="text/javascript" src="assets/js/utils.js"></script>
 
 </body>
 
