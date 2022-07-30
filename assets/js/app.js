@@ -25,7 +25,6 @@ const appModule = {
       selectedTheme = localStorage.getItem("selected-theme"),
       selectedIcon = localStorage.getItem("selected-icon");
 
-    
     if (selectedTheme) {
       document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
         darkTheme
@@ -57,6 +56,13 @@ const appModule = {
     });
   },
   addEventActions: function() {
+    window.addEventListener("scroll", _ => {
+      appModule.handleSomeElementsDisplay;
+      appModule.handleScrollUpButton();
+      appModule.handleActiveNavLink();
+      headerModule.handleHeaderScroll();
+    });
+
     const navToggle = document.getElementById("nav-toggle");
     navToggle.addEventListener("click", _ => document.getElementById("nav-menu").classList.add("show-menu"));  
 
@@ -96,14 +102,7 @@ const appModule = {
     videoButton.addEventListener("click", albumModule.handleVideo);
 
     const videoFile = document.getElementById("video-file");
-    videoFile.addEventListener("ended", albumModule.handleVideoEnding);
-
-    window.addEventListener("scroll", _ => {
-      appModule.handleSomeElementsDisplay;
-      appModule.handleScrollUpButton();
-      appModule.handleActiveNavLink();
-      headerModule.handleHeaderScroll();
-    });
+    videoFile.addEventListener("ended", albumModule.handleVideoEnding); 
   },
   handleScrollUpButton: function() {
     const scrollUp = document.getElementById("scroll-up");
