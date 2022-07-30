@@ -57,20 +57,46 @@ const appModule = {
     });
   },
   addEventActions: function() {
-    const navMenu = document.getElementById("nav-menu"),
-        navToggle = document.getElementById("nav-toggle"),
-        navClose = document.getElementById("nav-close"),
-        navLink = document.querySelectorAll(".nav__link"),
-        themeButton = document.getElementById("theme-button"),
-        marker = document.getElementById("marker"),
-        lieuxBanniere = document.querySelector(".lieux__bannière"),
-        panelTitles = document.querySelectorAll(".panneau__text"),
-        shelterContainer = document.querySelector(".gîtes__container"),
-        formButton = document.querySelectorAll(".form__button"),
-        form = document.getElementById("form"),
-        inputs = document.querySelectorAll("input, textarea"),
-        videoButton = document.getElementById("video-button"),
-        videoFile = document.getElementById("video-file");
+    const navToggle = document.getElementById("nav-toggle");
+    navToggle.addEventListener("click", _ => document.getElementById("nav-menu").classList.add("show-menu"));  
+
+    const navClose = document.getElementById("nav-close");
+    navClose.addEventListener("click", _ => document.getElementById("nav-menu").classList.remove("show-menu"));
+
+    const navLink = document.querySelectorAll(".nav__link");
+    navLink.forEach(link => link.addEventListener("click", headerModule.handleLinkClick));
+
+    const themeButton = document.getElementById("theme-button");
+    themeButton.addEventListener("click", _ => headerModule.handleTheme);
+
+    const marker = document.getElementById("marker");
+    marker.addEventListener("click", _ => placesModule.handleDescriptionDisplay.bind(null, 0));
+
+    const lieuxBanniere = document.querySelector(".lieux__bannière");
+    lieuxBanniere.addEventListener("click", _ => placesModule.handleDescriptionDisplay.bind(null, 1));       
+
+    const panelTitles = document.querySelectorAll(".panneau__text");
+    panelTitles[0].addEventListener("click", _ => sheltersModule.handlePicturesDisplay.bind(null, 0));
+    panelTitles[1].addEventListener("click", _ => sheltersModule.handlePicturesDisplay.bind(null, 1));
+
+    const shelterContainer = document.querySelector(".gîtes__container");
+    shelterContainer.addEventListener("click", _ => sheltersModule.handlePicturesDisplay.bind(null, 2));
+
+    const formButton = document.querySelectorAll(".form__button");
+    formButton[0].addEventListener("click", _ => giftModule.handleDisplayForm.bind(null, 0));
+    formButton[1].addEventListener("click", _ => giftModule.handleDisplayForm.bind(null, 1));
+
+    const form = document.getElementById("form");
+    form.addEventListener("submit", giftModule.handleFormSubmit);
+
+    const inputs = document.querySelectorAll("input, textarea");
+    inputs.forEach(input => input.addEventListener("input", _ => giftModule.handleInputChange(input)));
+
+    const videoButton = document.getElementById("video-button");
+    videoButton.addEventListener("click", albumModule.handleVideo);
+
+    const videoFile = document.getElementById("video-file");
+    videoFile.addEventListener("ended", albumModule.handleVideoEnding);
 
     window.addEventListener("scroll", _ => {
       appModule.handleSomeElementsDisplay;
@@ -78,21 +104,6 @@ const appModule = {
       appModule.handleActiveNavLink();
       headerModule.handleHeaderScroll();
     });
-    navToggle.addEventListener("click", _ => navMenu.classList.add("show-menu"));  
-    navClose.addEventListener("click", _ => navMenu.classList.remove("show-menu"));
-    navLink.forEach(link => link.addEventListener("click", headerModule.handleLinkClick));
-    themeButton.addEventListener("click", _ => headerModule.handleTheme);
-    marker.addEventListener("click", _ => placesModule.handleDescriptionDisplay.bind(null, 0));
-    lieuxBanniere.addEventListener("click", _ => placesModule.handleDescriptionDisplay.bind(null, 1));       
-    panelTitles[0].addEventListener("click", _ => sheltersModule.handlePicturesDisplay.bind(null, 0));
-    panelTitles[1].addEventListener("click", _ => sheltersModule.handlePicturesDisplay.bind(null, 1));
-    shelterContainer.addEventListener("click", _ => sheltersModule.handlePicturesDisplay.bind(null, 2));
-    formButton[0].addEventListener("click", _ => giftModule.handleDisplayForm.bind(null, 0));
-    formButton[1].addEventListener("click", _ => giftModule.handleDisplayForm.bind(null, 1));
-    form.addEventListener("submit", giftModule.handleFormSubmit);
-    inputs.forEach(input => input.addEventListener("input", _ => giftModule.handleInputChange(input)));
-    videoButton.addEventListener("click", albumModule.handleVideo);
-    videoFile.addEventListener("ended", albumModule.handleVideoEnding);
   },
   handleScrollUpButton: function() {
     const scrollUp = document.getElementById("scroll-up");
@@ -109,7 +120,7 @@ const appModule = {
       const sectionTop = section.offsetTop - 50;
 
       sectionId = section.getAttribute("id");
-      
+
       if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
         document
           .querySelector(`.nav__menu a[href*="${sectionId}"]`)
