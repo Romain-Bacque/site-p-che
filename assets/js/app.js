@@ -82,7 +82,6 @@ const appModule = {
     lieuxBanniere.addEventListener("click", placesModule.handleDescriptionDisplay.bind(null, 1));       
 
     const panelTitles = document.querySelectorAll(".panneau__text");
-    console.log(panelTitles)
     panelTitles[0].addEventListener("click", sheltersModule.handlePicturesDisplay.bind(null, 0));
     panelTitles[1].addEventListener("click", sheltersModule.handlePicturesDisplay.bind(null, 1));
 
