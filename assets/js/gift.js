@@ -1,5 +1,11 @@
 const giftModule = {
     formContainer: document.getElementById("container__form"),
+    firstName: document.getElementById("user__firstname"),
+    lastName: document.getElementById("user__lastname"),
+    email: document.getElementById("user__email"),
+    tel: document.getElementById("user__tel"),
+    msg: document.getElementById("msg"),
+    loader: document.getElementById("loader"),
     inputs: document.querySelectorAll("input, textarea"),
     handleFormSubmit: function(event) {
         event.preventDefault();
@@ -20,6 +26,9 @@ const giftModule = {
                 console.log(`Sorry, we are out of ${value}.`);
         }
     },
+    handleInputChange: function(input) {
+        if (!input.value) input.parentElement.className = "form__control";
+    },
     handleMinAndMaxDate: function(event) { 
         const form = document.getElementById("form");
 
@@ -37,10 +46,10 @@ const giftModule = {
         const year = today.getFullYear() + value;
     
         if (day < 10) {
-        day = "0" + day;
+            day = "0" + day;
         }
         if (month < 10) {
-        month = "0" + month;
+            month = "0" + month;
         }
     
         return year + "-" + month + "-" + day;
@@ -61,38 +70,38 @@ const giftModule = {
         }
     },
     checkInputs: function() {
-        const firstNameValue = firstName.value.trim(),
-            lastNameValue = lastName.value.trim(),
-            emailValue = email.value.trim(),
-            telValue = tel.value.trim(),
+        const firstNameValue = giftModule.firstName.value.trim(),
+            lastNameValue = giftModule.lastName.value.trim(),
+            emailValue = giftModule.email.value.trim(),
+            telValue = giftModule.tel.value.trim(),
             emptyField = "Le champs ne doit pas être vide";
     
         if (!firstNameValue) {
-            giftModule.setErrorFor(firstName, emptyField);
+            giftModule.setErrorFor(giftModule.firstName, emptyField);
         } else {
-            giftModule.setSuccessFor(firstName);
+            giftModule.setSuccessFor(giftModule.firstName);
         }
     
         if (!lastNameValue) {
-            giftModule.setErrorFor(lastName, emptyField);
+            giftModule.setErrorFor(giftModule.lastName, emptyField);
         } else {
-            giftModule.setSuccessFor(lastName);
+            giftModule.setSuccessFor(giftModule.lastName);
         }
     
         if (!emailValue) {
-            giftModule.setErrorFor(email, emptyField);
+            giftModule.setErrorFor(giftModule.email, emptyField);
         } else {
-            giftModule.setSuccessFor(email);
+            giftModule.setSuccessFor(giftModule.email);
         }
     
         if (!telValue) {
-            giftModule.setErrorFor(tel, emptyField);
+            giftModule.setErrorFor(giftModule.tel, emptyField);
         } else {
-            giftModule.setSuccessFor(tel);
+            giftModule.setSuccessFor(giftModule.tel);
         }
     },  
     setErrorFor: function(input, message) {
-        const formControl = input.parentElement; //.form__control
+        const formControl = input.parentElement;
         const small = formControl.querySelector("small");
     
         small.innerText = message;
@@ -102,32 +111,32 @@ const giftModule = {
         const formControl = input.parentElement;
     
         formControl.className = "form__control success";
-        giftModule.sendMail();
+        giftModule.sendEmail();
     },
-    sendMail: function() {
-        loader.style.display = "flex";
+    sendEmail: function() {
+        giftModule.loader.style.display = "flex";
         
         emailjs
         .send(utilsModule.emailjs_service, utilsModule.emailjs_template, {
-            firstName: firstName.value,
-            lastName: lastName.value,
-            email: email.value,
-            tel: tel.value,
-            msg: msg.value != "" ? msg.value : "Aucune information complémentaire.",
+            firstName: giftModule.firstName.value,
+            lastName: giftModule.lastName.value,
+            email: giftModule.email.value,
+            tel: giftModule.tel.value,
+            msg: giftModule.msg.value != "" ? msg.value : "Aucune information complémentaire.",
         })
         .then(
             response => {
-                loader.style.display = "none";
+                giftModule.loader.style.display = "none";
                 giftModule.makeSuccessModal();
                 giftModule.clearInputsText();
                 console.log("SUCCESS!", response.status, response.text);
             },
             error => {
-                loader.style.display = "none";
+                giftModule.loader.style.display = "none";
                 giftModule.makeErrorModal();
                 console.log("FAILED...", error);
             }
-            );
+        );
     },
     makeSuccessModal: function() {
         swal({
@@ -152,49 +161,3 @@ const giftModule = {
         });
     },
 }
-    
-// var form = document.getElementById("form");
-
-// //add Form//
-// function displayForm() {
-//   form.style.display = "flex";
-//   form.classList.add("form");
-
-//   var dates = document.querySelectorAll(".timepicker");
-
-//   for (let date of dates) {
-//     date.setAttribute("min", dateLimit(0));
-//     date.setAttribute("max", dateLimit(2));
-//   }
-// }
-
-// //remove Form
-// function hideForm() {
-//   form.style.display = "none";
-//   form.classList.remove("form");
-// }
-
-// //max date
-// function dateLimit(value) {
-//   var today = new Date();
-//   var dd = today.getDate();
-//   var mm = today.getMonth() + 1; //January is 0!
-//   var yyyy = today.getFullYear() + value;
-
-//   if (dd < 10) {
-//     dd = "0" + dd;
-//   }
-//   if (mm < 10) {
-//     mm = "0" + mm;
-//   }
-
-//   return yyyy + "-" + mm + "-" + dd;
-// }
-
-// var btn = document.querySelectorAll("button");
-
-// //button accès formulaire
-// btn[2].onclick = displayForm;
-
-// //button close formulaire
-// btn[0].onclick = hideForm;

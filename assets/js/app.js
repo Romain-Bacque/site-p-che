@@ -1,5 +1,51 @@
 
 const appModule = {
+  loaderDOM: document.getElementById('loader__dom'),
+  init: function() {
+    appModule.loader(1);
+    appModule.addEventActions();
+    albumModule.albumInit();
+  },
+  handleLoader: function(opacity) {
+      if(opacity <= 0){
+        scrollHeader();
+        appModule.loaderDOM.style.display = "none";  
+      } else {
+        appModule.loaderDOM.style.opacity = opacity;
+        window.setTimeout(() => {
+          appModule.handleLoader(opacity - 0.05);
+        }, 50);
+      }
+  },
+  addEventActions: function() {
+    const navMenu = document.getElementById("nav-menu"),
+        navToggle = document.getElementById("nav-toggle"),
+        navClose = document.getElementById("nav-close"),
+        navLink = document.querySelectorAll(".nav__link"),
+        marker = document.getElementById("marker"),
+        lieuxBanniere = document.querySelector(".lieux__bannière"),
+        panelTitles = document.querySelectorAll(".panneau__text"),
+        shelterContainer = document.querySelector(".gîtes__container"),
+        formButton = document.querySelectorAll(".form__button"),
+        form = document.getElementById("form"),
+        inputs = document.querySelectorAll("input, textarea");
+    
+    window.addEventListener("scroll", appModule.handleSomeElementsDisplay)
+    window.addEventListener("load", _ => appModule.handleLoader(1));
+    window.addEventListener("scroll", headerModule.handleHeaderScroll);
+    navToggle.addEventListener("click", _ => navMenu.classList.add("show-menu"));  
+    navClose.addEventListener("click", _ => navMenu.classList.remove("show-menu"));
+    navLink.forEach(link => link.addEventListener("click", headerModule.handleLinkClick));
+    marker.addEventListener("click", _ => placesModule.handleDescriptionDisplay.bind(null, 0));
+    lieuxBanniere.addEventListener("click", _ => placesModule.handleDescriptionDisplay.bind(null, 1));       
+    panelTitles[0].addEventListener("click", _ => sheltersModule.handlePicturesDisplay.bind(null, 0));
+    panelTitles[1].addEventListener("click", _ => sheltersModule.handlePicturesDisplay.bind(null, 1));
+    shelterContainer.addEventListener("click", _ => sheltersModule.handlePicturesDisplay.bind(null, 2));
+    formButton[0].addEventListener("click", _ => giftModule.handleDisplayForm.bind(null, 0));
+    formButton[1].addEventListener("click", _ => giftModule.handleDisplayForm.bind(null, 1));
+    form.addEventListener("submit", giftModule.handleFormSubmit);
+    inputs.forEach(input => input.addEventListener("input", _ => giftModule.handleInputChange(input)));
+  },
   handleSomeElementsDisplay: function() {
     const shelterAndGifSections = document.querySelectorAll("#cadeau, #gîtes");
 
@@ -16,82 +62,34 @@ const appModule = {
       giftModule.hideForm();
     }
   },
-  addEventActions: function() {
-    const navMenu = document.getElementById("nav-menu"),
-        navToggle = document.getElementById("nav-toggle"),
-        navClose = document.getElementById("nav-close"),
-        navLink = document.querySelectorAll(".nav__link"),
-        marker = document.getElementById("marker"),
-        lieuxBanniere = document.querySelector(".lieux__bannière"),
-        panelTitles = document.querySelectorAll(".panneau__text"),
-        shelterContainer = document.querySelector(".gîtes__container"),
-        formButton = document.querySelectorAll(".form__button"),
-        form = document.getElementById("form");
+  albumInit: function() {
+    const cards = document.querySelectorAll(".album__card");
+
+    cards.forEach((card) => {
+    const cardLinks = card.querySelectorAll("a");
     
-    window.addEventListener("scroll", appModule.handleSomeElementsDisplay)
-    window.addEventListener("load", _ => utilsModule.handleLoadNow(1));
-    window.addEventListener("scroll", headerModule.handleHeaderScroll);
-    navToggle.addEventListener("click", _ => navMenu.classList.add("show-menu"));  
-    navClose.addEventListener("click", _ => navMenu.classList.remove("show-menu"));
-    navLink.forEach(link => link.addEventListener("click", headerModule.handleLinkClick));
-    marker.addEventListener("click", _ => placesModule.handleDescriptionDisplay.bind(null, 0));
-    lieuxBanniere.addEventListener("click", _ => placesModule.handleDescriptionDisplay.bind(null, 1));       
-    panelTitles[0].addEventListener("click", _ => sheltersModule.handlePicturesDisplay.bind(null, 0));
-    panelTitles[1].addEventListener("click", _ => sheltersModule.handlePicturesDisplay.bind(null, 1));
-    shelterContainer.addEventListener("click", _ => sheltersModule.handlePicturesDisplay.bind(null, 2));
-    formButton[0].addEventListener("click", _ => giftModule.handleDisplayForm.bind(null, 0));
-    formButton[1].addEventListener("click", _ => giftModule.handleDisplayForm.bind(null, 1));
-    form.addEventListener("submit", giftModule.handleFormSubmit);
-  },
-  init: function() {
-    utilsModule.loadNow(1);
-    appModule.addEventActions();
-  },
+    card.querySelector(".album__description").innerText = `${cardLinks.length} photos`;
+    });
+
+    albumModule.swiper = new Swiper(".album__container", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        loop: true,
+        spaceBetween: 32,
+        coverflowEffect: {
+            rotate: 0,
+        },
+    });
+  }
 }
 
 window.addEventListener("load", appModule.init);
 
 
-/*==================== ALBUM COUNT ====================*/
-const cards = document.querySelectorAll(".album__card");
+/*==================== ALBUM ====================*/
 
-cards.forEach((card) => {
-  const cardLinks = card.querySelectorAll("a");
-  card.querySelector(".album__description").innerText = `${cardLinks.length} photos`;
-});
-
-/*==================== SWIPER DISCOVER ====================*/
-const swiper = new Swiper(".album__container", {
-  effect: "coverflow",
-  grabCursor: true,
-  centeredSlides: true,
-  slidesPerView: "auto",
-  loop: true,
-  spaceBetween: 32,
-  coverflowEffect: {
-    rotate: 0,
-  },
-});
-
-
-/*==================== CADEAU ====================*/
-
-//Form email managing
-const firstName = document.getElementById("user__firstname");
-const lastName = document.getElementById("user__lastname");
-const email = document.getElementById("user__email");
-const tel = document.getElementById("user__tel");
-const msg = document.getElementById("msg");
-const loader = document.getElementById("loader");
-
-//onChange
-inputs.forEach((input) => {
-  input.addEventListener("input", _ => {
-    if (input.value === "") {
-      input.parentElement.className = "form__control";
-    }
-  });
-});
 
 /*==================== VIDEO ====================*/
 const videoFile = document.getElementById("video-file"),
