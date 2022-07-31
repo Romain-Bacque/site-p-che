@@ -135,7 +135,7 @@ const giftModule = {
             lastName: giftModule.lastName.value,
             email: giftModule.email.value,
             tel: giftModule.tel.value,
-            msg: giftModule.msg.value != "" ? msg.value : "Aucune information complémentaire.",
+            msg: !giftModule.msg.value ? msg.value : "Aucune information complémentaire.",
         })
         .then(
             response => {
