@@ -8,6 +8,7 @@ const utilsModule = require("./utils");
 const appModule = {
   loaderDOM: document.getElementById("loader__dom"),
   init: function () {
+    appModule.handlePageLoader(1);
     appModule.initTheme();
     albumModule.initAlbum();
     appModule.initIntersectionObserver();
@@ -66,10 +67,6 @@ const appModule = {
     emailjs.init(utilsModule.emailjs_user);
   },
   addEventActions: function () {
-    window.addEventListener("load", () => {
-      appModule.handlePageLoader(1);
-    });
-
     window.addEventListener("scroll", () => {
       appModule.handleSomeElementsDisplay;
       appModule.handleScrollUpButton();
