@@ -7,6 +7,8 @@ const giftModule = {
     lastName: document.getElementById("user__lastname"),
     email: document.getElementById("user__email"),
     tel: document.getElementById("user__tel"),
+    // fromDateValue = fromDate.value.trim(),
+    // toDateValue = toDate.value.trim(),
     msg: document.getElementById("msg"),
     loader: document.getElementById("loader"),
     inputs: document.querySelectorAll("input, textarea"),
@@ -71,6 +73,8 @@ const giftModule = {
             lastNameValue = giftModule.lastName.value.trim(),
             emailValue = giftModule.email.value.trim(),
             telValue = giftModule.tel.value.trim(),
+            // fromDate: fromDate.value,
+            // toDate: toDate.value,
             emptyField = "Le champs ne doit pas être vide";
     
         if (!firstNameValue) {
@@ -96,6 +100,18 @@ const giftModule = {
         } else {
             giftModule.setSuccessFor(giftModule.tel);
         }
+
+        // if(!fromDateValue) {
+        //    setErrorFor(fromDate, emptyField);
+        // } else {
+        //    setSuccessFor(fromDate);
+        // }
+
+        // if(!toDateValue) {
+        //    setErrorFor(toDate, emptyField);
+        // } else {
+        //    setSuccessFor(toDate);
+        // }
     },  
     setErrorFor: function(input, message) {
         const formControl = input.parentElement;
