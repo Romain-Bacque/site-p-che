@@ -14,7 +14,7 @@ const headerModule = {
         return document.body.classList.contains(darkTheme) ? "dark" : "light";
     },
     getCurrentIcon: function() {
-        return themeButton.classList.contains(iconTheme) ? "ri-moon-line" : "ri-sun-line";
+        return headerModule.themeButton.classList.contains(iconTheme) ? "ri-moon-line" : "ri-sun-line";
     },
     handleLinkClick: function() {
         const navMenu = document.getElementById("nav-menu");
