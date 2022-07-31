@@ -3,9 +3,9 @@ const placesModule = {
         event.stopPropagation();
 
         if(value === 0) {
-            document.getElementById("description").classList.toggle("description");
+            document.getElementById("lieux__description").classList.toggle("description");
         } else if(value === 1) {
-            document.getElementById("description").classList.remove("description");
+            document.getElementById("lieux__description").classList.remove("description");
         }
     }
 }
