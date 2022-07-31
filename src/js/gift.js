@@ -1,5 +1,5 @@
 
-const utilsModule = require('./js/utils');
+const utilsModule = require('./utils');
 
 const giftModule = {
     formContainer: document.getElementById("container__form"),

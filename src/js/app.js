@@ -3,7 +3,7 @@ const giftModule = require('./gift');
 const headerModule = require('./header');
 const placesModule = require('./places');
 const sheltersModule = require('./shelters');
-const utilsModule = require('./js/utils');
+const utilsModule = require('./utils');
 
 const appModule = {
   loaderDOM: document.getElementById('loader__dom'),
