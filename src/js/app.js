@@ -68,7 +68,7 @@ const appModule = {
   },
   addEventActions: function () {
     window.addEventListener("scroll", () => {
-      appModule.handleSomeElementsDisplay;
+      appModule.handleSomeElementsDisplay();
       appModule.handleScrollUpButton();
       appModule.handleActiveNavLink();
       headerModule.handleHeaderScroll();
