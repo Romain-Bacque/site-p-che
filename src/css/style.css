@@ -181,7 +181,7 @@ footer {
   width: 100%;
   height: 100%;
   z-index: 2000;
-  background: #F1F2F3 url('../img/Spinner.gif') no-repeat center center;
+  background: #f1f2f3 url("../img/Spinner.gif") no-repeat center center;
 }
 
 /*----------header----------*/
@@ -836,7 +836,6 @@ header .nav {
   background: url("../img/gîtes.jpg") no-repeat;
   background-size: 110% 100%;
   background-position-x: 80%;
-  z-index: var(--z-fixed);
   overflow: hidden;
 }
 
@@ -936,13 +935,13 @@ header .nav {
   transform: translateX(-100%);
 }
 
-#panneau {
+.panneau {
   position: absolute;
   bottom: 9px;
   left: 50%;
   width: 200px;
   transform: rotate(-10deg) translateX(-50%);
-  z-index: 3;
+  z-index: 4;
 }
 
 #img__panneau {
