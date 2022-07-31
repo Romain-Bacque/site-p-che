@@ -30,7 +30,8 @@ const appModule = {
     const darkTheme = "dark-theme",
       iconTheme = "ri-sun-line",
       selectedTheme = localStorage.getItem("selected-theme"),
-      selectedIcon = localStorage.getItem("selected-icon");
+      selectedIcon = localStorage.getItem("selected-icon"),
+      themeButton = document.getElementById("theme-button");
 
     if (selectedTheme) {
       document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
