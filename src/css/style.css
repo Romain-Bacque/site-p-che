@@ -54,7 +54,7 @@
 
   /*--------------z-index-------------*/
   --z-tooltip: 2;
-  --z-fixed: 4;
+  --z-fixed: 10;
 
   /*------------Hover overlay---------*/
   --img-transition: 0.3s;
@@ -180,14 +180,14 @@ footer {
   position: fixed;
   width: 100%;
   height: 100%;
-  z-index: 2000;
+  z-index: 6;
   background: #f1f2f3 url("../img/Spinner.gif") no-repeat center center;
 }
 
 /*----------header----------*/
 .header {
-  width: 100%;
   position: fixed;
+  width: 100%;
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
@@ -233,7 +233,7 @@ header .nav {
   .nav__menu {
     position: fixed;
     background-color: var(--body-color);
-    z-index: 2000;
+    z-index: var(--z-fixed);
     top: 0;
     right: -100%;
     width: 70%;
@@ -398,7 +398,7 @@ header .nav {
 
 .home__bannière .wave1 {
   animation: animate 30s linear infinite;
-  z-index: 10;
+  z-index: 1;
   opacity: 1;
   animation-delay: 0s;
   bottom: 0;
@@ -406,7 +406,7 @@ header .nav {
 
 .home__bannière .wave2 {
   animation: animate 30s linear infinite;
-  z-index: 9;
+  z-index: 2;
   opacity: 0.5;
   animation-delay: -5s;
   bottom: 0.1em;
@@ -414,7 +414,7 @@ header .nav {
 
 .home__bannière .wave3 {
   animation: animate 15s linear infinite;
-  z-index: 8;
+  z-index: 3;
   opacity: 0.2;
   animation-delay: -2s;
   bottom: 0.3em;
@@ -422,7 +422,7 @@ header .nav {
 
 .home__bannière .wave4 {
   animation: animate 5s linear infinite;
-  z-index: 7;
+  z-index: 4;
   opacity: 0.7;
   animation-delay: -5s;
   bottom: 0.5em;
@@ -518,7 +518,7 @@ header .nav {
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 0.5;
+  z-index: 1;
   opacity: 0.2;
   background: url("../img/mountain_background.jpg") center/cover no-repeat;
 }
@@ -818,7 +818,7 @@ header .nav {
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 0.5;
+  z-index: 1;
   opacity: 0.2;
   background: url("../img/mountain_background3.jpg") center/cover no-repeat;
 }
@@ -836,6 +836,7 @@ header .nav {
   background: url("../img/gîtes.jpg") no-repeat;
   background-size: 110% 100%;
   background-position-x: 80%;
+  z-index: 1;
   overflow: hidden;
 }
 
