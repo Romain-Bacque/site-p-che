@@ -6,23 +6,22 @@ const sheltersModule = require("./shelters");
 const utilsModule = require("./utils");
 
 const appModule = {
-  loaderDOM: document.getElementById("loader__dom"),
+  loaderDOM: document.getElementById("loader-dom"),
   init: function () {
-    appModule.handlePageLoader(1);
     appModule.initTheme();
     albumModule.initAlbum();
     appModule.initIntersectionObserver();
     appModule.initEmailjs();
     appModule.addEventActions();
   },
-  handlePageLoader: function (opacity) {
+  initDOMLoader: function (opacity) {
     if (opacity <= 0) {
       headerModule.handleHeaderScroll();
       appModule.loaderDOM.style.display = "none";
     } else {
       appModule.loaderDOM.style.opacity = opacity;
       window.setTimeout(() => {
-        appModule.handlePageLoader(opacity - 0.05);
+        appModule.initDOMLoader(opacity - 0.05);
       }, 50);
     }
   },
@@ -67,6 +66,8 @@ const appModule = {
     emailjs.init(utilsModule.emailjs_user);
   },
   addEventActions: function () {
+    window.addEventListener("load", () => appModule.initDOMLoader(1));
+
     window.addEventListener("scroll", () => {
       appModule.handleSomeElementsDisplay();
       appModule.handleScrollUpButton();
