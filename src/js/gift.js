@@ -125,34 +125,30 @@ const giftModule = {
     formControl.className = "form__control success";
     giftModule.sendEmail();
   },
-  sendEmail: function () {
+  sendEmail: async function () {
     giftModule.loader.style.display = "flex";
+    const mailData = {
+      firstName: giftModule.firstName.value,
+      lastName: giftModule.lastName.value,
+      email: giftModule.email.value,
+      tel: giftModule.tel.value,
+      msg: giftModule.msg.value,
+    };
 
-    emailjs
-      .send(utilsModule.emailjs_service, utilsModule.emailjs_template, {
-        firstName: giftModule.firstName.value,
-        lastName: giftModule.lastName.value,
-        email: giftModule.email.value,
-        tel: giftModule.tel.value,
-        msg: !giftModule.msg.value
-          ? msg.value
-          : "Aucune information complémentaire.",
-      })
-      .then(
-        (response) => {
-          giftModule.loader.style.display = "none";
-          giftModule.makeSuccessModal();
-          giftModule.clearInputsText();
+    try {
+      await utilsModule.sendMail(mailData);
 
-          console.log("SUCCESS!", response.status, response.text);
-        },
-        (error) => {
-          giftModule.loader.style.display = "none";
-          giftModule.makeErrorModal();
+      giftModule.loader.style.display = "none";
+      giftModule.makeSuccessModal();
+      giftModule.clearInputsText();
 
-          console.log("FAILED...", error);
-        }
-      );
+      console.log("SUCCESS!");
+    } catch (err) {
+      giftModule.loader.style.display = "none";
+      giftModule.makeErrorModal();
+
+      console.log("FAILED...", err);
+    }
   },
   makeSuccessModal: function () {
     swal({
