@@ -1,5 +1,5 @@
 const sheltersModule = {
-  shelterPictures: document.querySelectorAll(".photo__gîte"),
+  shelterPictures: document.querySelectorAll(".cottage"),
   handlePicturesDisplay: function (value, event) {
     event.stopPropagation();
 
@@ -21,16 +21,16 @@ const sheltersModule = {
     }
   },
   toggleShelter1: function () {
-    sheltersModule.shelterPictures[1].classList.toggle("gîte2");
-    sheltersModule.shelterPictures[0].classList.remove("gîte1");
+    sheltersModule.shelterPictures[1].classList.toggle("cottage--2");
+    sheltersModule.shelterPictures[0].classList.remove("cottage--1");
   },
   toggleShelter2: function () {
-    sheltersModule.shelterPictures[0].classList.toggle("gîte1");
-    sheltersModule.shelterPictures[1].classList.remove("gîte2");
+    sheltersModule.shelterPictures[0].classList.toggle("cottage--1");
+    sheltersModule.shelterPictures[1].classList.remove("cottage--2");
   },
   hideShelters: function () {
-    sheltersModule.shelterPictures[0].classList.remove("gîte1");
-    sheltersModule.shelterPictures[1].classList.remove("gîte2");
+    sheltersModule.shelterPictures[0].classList.remove("cottage--1");
+    sheltersModule.shelterPictures[1].classList.remove("cottage--2");
   },
 };
 

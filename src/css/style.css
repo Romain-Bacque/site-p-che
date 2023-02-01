@@ -39,7 +39,7 @@
   --font-semi-bold: 600;
 
   /* -------box shadow------- */
-  --box-shadow-bannière: 5px 5px 15px gray;
+  --box-shadow-banner: 5px 5px 15px gray;
   --box-shadow-table: 2px 2px 10px 2px lightgray;
 
   /*--------------margin bottom-------------*/
@@ -379,7 +379,7 @@ header .nav {
   margin-top: var(--mb-2-5);
 }
 
-.home__bannière {
+.home__banner {
   position: relative;
   background: url("../img/home1.jpg") center/cover no-repeat;
   width: 100%;
@@ -388,7 +388,7 @@ header .nav {
   margin-bottom: 2rem;
 }
 
-.home__bannière .wave {
+.home__banner .wave {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -398,7 +398,7 @@ header .nav {
   background-size: 1200px 100px;
 }
 
-.home__bannière .wave1 {
+.home__banner .wave1 {
   animation: animate 30s linear infinite;
   z-index: 1;
   opacity: 1;
@@ -406,7 +406,7 @@ header .nav {
   bottom: 0;
 }
 
-.home__bannière .wave2 {
+.home__banner .wave2 {
   animation: animate 30s linear infinite;
   z-index: 2;
   opacity: 0.5;
@@ -414,7 +414,7 @@ header .nav {
   bottom: 0.1em;
 }
 
-.home__bannière .wave3 {
+.home__banner .wave3 {
   animation: animate 15s linear infinite;
   z-index: 3;
   opacity: 0.2;
@@ -422,7 +422,7 @@ header .nav {
   bottom: 0.3em;
 }
 
-.home__bannière .wave4 {
+.home__banner .wave4 {
   animation: animate 5s linear infinite;
   z-index: 4;
   opacity: 0.7;
@@ -511,8 +511,8 @@ header .nav {
   box-shadow: 5px 5px 4px hsla(var(--hue-color), 64%, 15%, 0.3);
 }
 
-/* ---------Lieux-------- */
-#lieux::before {
+/* --------- Places -------- */
+#places::before {
   content: "";
   display: block;
   position: absolute;
@@ -524,11 +524,11 @@ header .nav {
   background: url("../img/mountain_background.jpg") center/cover no-repeat;
 }
 
-.lieux__container {
+.places__container {
   align-content: center;
   row-gap: 3rem;
 }
-.lieux__bannière {
+.places__banner {
   position: relative;
   background: url("../img/home2.jpg") top/cover no-repeat;
   width: 100%;
@@ -537,7 +537,7 @@ header .nav {
   margin: 0 0 15px 0;
 }
 
-.lieux__bannière-title {
+.places__banner-title {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -549,7 +549,7 @@ header .nav {
   z-index: var(--z-tooltip);
 }
 
-.lieux__bannière-title h2 {
+.places__banner-title h2 {
   color: white;
 }
 
@@ -566,7 +566,7 @@ header .nav {
   width: 30px;
 }
 
-.lieux__description {
+.places__description {
   position: absolute;
   left: 50%;
   bottom: -10%;
@@ -592,7 +592,7 @@ header .nav {
   opacity: 0.9;
 }
 
-.lieux__cloud {
+.places__cloud {
   height: 60%;
   width: 100%;
   object-fit: cover;
@@ -612,12 +612,12 @@ header .nav {
   }
 }
 
-.lieux__techniques-title {
+.places__title {
   text-align: left;
   padding: 2rem;
 }
 
-.techniques__wrapper {
+.techniques {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -625,7 +625,7 @@ header .nav {
   align-items: center;
 }
 
-.lieux__techniques {
+.techniques__card {
   position: relative;
   display: flex;
   justify-self: center;
@@ -635,7 +635,7 @@ header .nav {
   overflow: hidden;
 }
 
-.lieux__techniques ul {
+.techniques__list {
   list-style-image: url("../img/fishing.png");
   margin: 1rem 0 0 1rem;
   padding: 1rem;
@@ -663,7 +663,7 @@ header .nav {
   transform: var(--img-scale);
 }
 
-.lieux__slider {
+.slider {
   position: relative;
   color: white;
   width: 100%;
@@ -673,21 +673,21 @@ header .nav {
   overflow: hidden;
 }
 
-.lieux__slides {
+.slider__slides {
   position: absolute;
   width: calc(100% * 4);
   height: 100%;
   animation: slide 15s infinite;
 }
 
-.slide {
+.slider__slide {
   width: calc(100% / 4);
   height: 100%;
   object-fit: fill;
   float: left;
 }
 
-.lieux .text {
+.slider__text {
   position: absolute;
   top: 0;
   left: 0;
@@ -698,22 +698,22 @@ header .nav {
   font-size: 1em;
 }
 
-.lieux .text1 {
+.slider__text--1 {
   left: 0;
 }
 
-.lieux .text2 {
+.slider__text--2 {
   left: 25%;
 }
-.lieux .text3 {
+.slider__text--3 {
   left: 50%;
 }
 
-.lieux .text4 {
+.slider__text--4 {
   left: 75%;
 }
 
-.carnassier__content {
+.carnassier__container {
   grid-template: 1fr auto/1fr minmax(100px, auto) minmax(100px, auto);
   gap: 1rem;
   grid-template-areas:
@@ -810,8 +810,8 @@ header .nav {
   font-size: var(--small-font-size);
 }
 
-/*--------Gîtes-------- */
-#gîtes::before {
+/*--------Cottages-------- */
+#cottages::before {
   content: "";
   display: block;
   position: absolute;
@@ -823,14 +823,14 @@ header .nav {
   background: url("../img/mountain_background3.jpg") center/cover no-repeat;
 }
 
-.gîtes__container {
+.cottages__container {
   align-content: center;
   grid-template-rows: 800px max-content;
   gap: 2rem;
   overflow: hidden;
 }
 
-.gîtes__container .item1 {
+.cottages__container .item1 {
   position: relative;
   width: 100%;
   background: url("../img/gîtes.jpg") no-repeat;
@@ -840,7 +840,7 @@ header .nav {
   overflow: hidden;
 }
 
-.gîtes__bannière {
+.cottages__banner {
   position: absolute;
   top: 0;
   left: 0;
@@ -857,11 +857,11 @@ header .nav {
   overflow: hidden;
 }
 
-.gîtes__bannière h2 {
+.cottages__banner h2 {
   font-size: var(--h2-font-size);
   color: hsl(160, 25%, 15%);
 }
-.gîtes__bannière h3 {
+.cottages__banner h3 {
   text-transform: uppercase;
   font-size: var(--smaller-font-size);
   text-align: center;
@@ -872,7 +872,7 @@ header .nav {
   width: 100%;
 }
 
-.photo__gîte {
+.cottage {
   position: absolute;
   bottom: 0em;
   display: flex;
@@ -887,56 +887,56 @@ header .nav {
   z-index: var(--z-tooltip);
 }
 
-.gîtes-img {
-  width: 80%;
-  height: 30%;
-  margin-bottom: 1em;
-  overflow: hidden;
-}
-
-.gîtes-img img {
-  width: 100%;
-  height: 100%;
-  transition: var(--img-transition);
-}
-
-.gîtes-img img:hover {
-  transform: var(--img-scale);
-}
-
-.photo__gîte h3 img {
-  width: 2em;
-  vertical-align: bottom;
-}
-
-.photo__gîte h3 {
-  font-size: var(--h3-font-size);
-  color: #be9a6a;
-  margin-bottom: 1em;
-}
-
-#gîte1 {
+#cottage--1 {
   left: -40%;
 }
 
-#gîte2 {
+#cottage--2 {
   right: -40%;
 }
 
-.gîte1 {
+.cottage--1 {
   opacity: 1;
   background-color: rgba(43, 79, 115, 0.5);
   transform: translateX(100%);
 }
 
-.gîte2 {
+.cottage--2 {
   opacity: 1;
   display: flex;
   background-color: rgba(43, 79, 115, 0.5);
   transform: translateX(-100%);
 }
 
-.panneau {
+.cottages-img {
+  width: 80%;
+  height: 30%;
+  margin-bottom: 1em;
+  overflow: hidden;
+}
+
+.cottages-img img {
+  width: 100%;
+  height: 100%;
+  transition: var(--img-transition);
+}
+
+.cottages-img img:hover {
+  transform: var(--img-scale);
+}
+
+.cottage > h3 > img {
+  width: 2em;
+  vertical-align: bottom;
+}
+
+.cottage > h3 {
+  font-size: var(--h3-font-size);
+  color: #be9a6a;
+  margin-bottom: 1em;
+}
+
+.sign {
   position: absolute;
   bottom: -3px;
   left: 50%;
@@ -946,11 +946,7 @@ header .nav {
   z-index: 4;
 }
 
-#img__panneau {
-  width: 100%;
-}
-
-.panneau__text {
+.sign__text {
   opacity: 0.8;
   position: absolute;
   left: 50%;
@@ -961,21 +957,21 @@ header .nav {
   transition: 0.1s linear;
 }
 
-.panneau__text:hover {
+.sign__text:hover {
   cursor: pointer;
   opacity: 1;
   letter-spacing: 0.2rem;
 }
 
-.panneau__text1 {
+.sign__text1 {
   top: 2.5em;
 }
 
-.panneau__text2 {
+.sign__text2 {
   top: 5.2em;
 }
 
-.gîtes__description {
+.cottages__description {
   position: relative;
   display: flex;
   justify-content: center;
@@ -986,24 +982,24 @@ header .nav {
   column-gap: 10em;
 }
 
-.gîtes__description h3 {
+.cottages__description h3 {
   margin-bottom: 0.5em;
 }
 
-.gîtes__description-img {
+.cottages__description-img {
   position: relative;
   width: 15em;
   height: 12em;
   border-radius: 57% 43% 37% 63%/45% 52% 48% 55%;
 }
 
-.gîtes__description #img2 {
+.cottages__description #img2 {
   width: 100%;
   height: 100%;
   border-radius: 57% 43% 37% 63%/45% 52% 48% 55%;
 }
 
-.gîtes__description #img3 {
+.cottages__description #img3 {
   position: absolute;
   bottom: -20%;
   right: -20%;
@@ -1012,11 +1008,11 @@ header .nav {
   border-radius: 50%;
 }
 
-.gîtes__description h3 {
+.cottages__description h3 {
   font-size: var(--h3-font-size);
 }
 
-.gîtes__description-content {
+.cottages__description-content {
   position: relative;
   font-size: var(--smaller-font-size);
   min-width: 0.9em;
@@ -1024,7 +1020,7 @@ header .nav {
   margin-top: 6em;
 }
 
-.gîtes__description-contact {
+.cottages__description-contact {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -1034,31 +1030,31 @@ header .nav {
   color: var(--text-color-light);
 }
 
-.gîtes__description p img {
+.cottages__description p img {
   margin-right: 0.5em;
   vertical-align: middle;
 }
 
-.gîtes__description a {
+.cottages__description a {
   margin-right: 2px;
   opacity: 0.9;
   text-decoration: none;
   vertical-align: middle;
 }
 
-/* ------cadeau------ */
-.cadeau__container {
+/* ------ Gift ------ */
+.gift__container {
   min-width: 300px;
   row-gap: 2em;
 }
 
-.cadeau__description {
+.gift__description {
   position: absolute;
   padding: 1.5em;
   background-color: hsla(var(--hue-color), 64%, 18%, 0.7);
 }
 
-.cadeau__description h2 {
+.gift__description h2 {
   color: white;
 }
 
@@ -1557,16 +1553,16 @@ button[type="submit"]:hover {
   vertical-align: middle;
 }
 
-/* ------tarifs------ */
-.tarifs__container {
+/* ------ Rates ------ */
+.rates__container {
   min-width: 300px;
   row-gap: 2em;
 }
 
-.tarifs__bannière {
+.rates__banner {
   position: relative;
   background-color: white;
-  box-shadow: var(--box-shadow-bannière);
+  box-shadow: var(--box-shadow-banner);
   display: flex;
   justify-content: space-between;
   height: auto;
@@ -1574,17 +1570,17 @@ button[type="submit"]:hover {
   overflow: hidden;
 }
 
-.tarifs__title {
+.rates__title {
   padding: 0.5em;
   width: 50%;
 }
 
-.tarifs__bannière h2 {
+.rates__banner h2 {
   color: var(--first-color);
   margin-bottom: 0.3rem;
 }
 
-.photos__bannière {
+.photos__banner {
   position: absolute;
   width: 100%;
   height: 200%;
@@ -1596,18 +1592,22 @@ button[type="submit"]:hover {
   background-size: 90% 70%;
 }
 
-.tarifs__content {
+.rates__content {
   display: flex;
   flex-direction: column;
   row-gap: 3rem;
 }
 
-.info-hébergement {
+.booking-info {
   margin-top: 0.5em;
   color: #09454b;
   text-decoration: underline;
   font-weight: var(--font-semi-bold);
   filter: var(--current-brightness);
+}
+
+.booking-info__phone {
+  font-weight: bold;
 }
 
 table {
@@ -1644,7 +1644,7 @@ tr:nth-child(3) {
   color: white;
 }
 
-.tarifs__footer {
+.rates__footer {
   position: relative;
   margin-top: var(--mb-2);
   width: 100%;
@@ -1655,7 +1655,7 @@ tr:nth-child(3) {
   background: var(--first-color);
 }
 
-.tarifs__footer div {
+.rates__footer div {
   font-size: var(--small-font-size);
   width: auto;
   color: white;
@@ -1664,7 +1664,7 @@ tr:nth-child(3) {
   position: relative;
 }
 
-.tarifs__footer div h3 {
+.rates__footer div h3 {
   color: white;
   margin-bottom: 1em;
 }
@@ -1818,7 +1818,7 @@ body.dark-theme {
   --body-color-second: hsl(var(--hue-color), 29%, 12%);
   --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
-  --box-shadow-bannière: none;
+  --box-shadow-banner: none;
   --box-shadow-table: none;
   --current-brightness: brightness(100);
 }
@@ -1881,25 +1881,23 @@ body.dark-theme {
 
 /* -------- for medium devices --------- */
 @media screen and (max-width: 568px) {
-  .lieux__techniques {
+  .techniques {
     border: none;
   }
-
-  .lieux__techniques ul {
-    position: absolute;
-    width: 80%;
-    bottom: 1em;
-    left: 0;
+  .techniques__list {
     text-shadow: 0 0 4px black;
     filter: brightness(100);
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
   }
-  .photos__bannière {
+  .photos__banner {
     background-size: 100% 70%;
   }
 }
 
 @media screen and (min-width: 568px) {
-  .lieux__techniques {
+  .techniques__card {
     position: relative;
     display: flex;
     justify-content: flex-start;
@@ -1907,7 +1905,7 @@ body.dark-theme {
     grid-template-rows: repeat(3, 1fr);
     width: 90%;
   }
-  .lieux__techniques ul {
+  .techniques__list {
     position: inherit;
     padding: var(--mb-2);
     width: 50%;
@@ -1940,11 +1938,11 @@ body.dark-theme {
     top: -1em;
     left: 3%;
   }
-  .gîtes__container {
+  .cottages__container {
     grid-template-rows: 600px max-content;
   }
 
-  .gîtes__container .item1 {
+  .cottages__container .item1 {
     height: 600px;
     background-size: 148% 100%;
     background-position-x: 70%;
@@ -1995,19 +1993,37 @@ body.dark-theme {
 }
 
 @media screen and (min-width: 1200px) {
-   .nav {
-    height: calc(var(--header-height) + 1.5rem);
-    justify-content: center;
+  .container {
+    max-width: 1024px;
   }
+
   .nav__toggle,
   .nav__close,
   .change-theme-name {
     display: none;
   }
+
+  header .nav {
+    justify-content: center;
+  }
+
   .nav__list {
     flex-direction: row;
     column-gap: 4rem;
-  }  
+  }
+  .form div:nth-child(1) {
+    display: flex;
+  }
+
+  .cgu__container {
+    flex-direction: row-reverse;
+  }
+  body {
+    margin: 0;
+  }
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+  }
   .nav__link {
     color: white;
     text-transform: initial;
@@ -2034,18 +2050,6 @@ body.dark-theme {
   .scroll-header .change-theme {
     color: var(--text-color);
   }
-  .container {
-    max-width: 1024px;
-  }  
-  .form div:nth-child(1) {
-    display: flex;
-  }
-  .cgu__container {
-    flex-direction: row-reverse;
-  }
-  body {
-    margin: 0;
-  } 
   .home__container {
     height: 100vh;
     grid-template-rows: 1.8fr 0.5fr;
@@ -2069,7 +2073,7 @@ body.dark-theme {
   body {
     margin: 0;
   }
-  .home__bannière {
+  .home__banner {
     height: 640px;
   }
 }

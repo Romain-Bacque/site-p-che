@@ -99,13 +99,13 @@ const appModule = {
       placesModule.handleDescriptionDisplay.bind(null, 0)
     );
 
-    const lieuxBanniere = document.querySelector(".lieux__bannière");
-    lieuxBanniere.addEventListener(
+    const placesBanniere = document.querySelector(".places__banner");
+    placesBanniere.addEventListener(
       "click",
       placesModule.handleDescriptionDisplay.bind(null, 1)
     );
 
-    const panelTitles = document.querySelectorAll(".panneau__text");
+    const panelTitles = document.querySelectorAll(".sign__text");
     panelTitles[0].addEventListener(
       "click",
       sheltersModule.handlePicturesDisplay.bind(null, 0)
@@ -115,7 +115,7 @@ const appModule = {
       sheltersModule.handlePicturesDisplay.bind(null, 1)
     );
 
-    const shelterContainer = document.querySelector(".gîtes__container");
+    const shelterContainer = document.querySelector(".cottages__container");
     shelterContainer.addEventListener(
       "click",
       sheltersModule.handlePicturesDisplay.bind(null, 2)
@@ -173,7 +173,7 @@ const appModule = {
     });
   },
   handleSomeElementsDisplay: function () {
-    const shelterAndGifSections = document.querySelectorAll("#cadeau, #gîtes");
+    const shelterAndGifSections = document.querySelectorAll("#gift, #cottages");
 
     if (
       window.scrollY < shelterAndGifSections[1].offsetTop - 600 ||
