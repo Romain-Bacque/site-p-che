@@ -273,7 +273,7 @@
             <h3>⇁ Formule stage de pêche (sans hébergement):</h3>
             <p>Initiation ou perfectionnement (carte de pêche obligatoire, non compris dans les prestations)</p>
             <table>
-              <tr class="table_header">
+              <tr class="table-header">
                 <th></th>
                 <th></th>
                 <th>1/2 journée.</th>
@@ -323,7 +323,7 @@
             <p>Guidage en initiation ou perfectionnement pêche (Groupe de 6 personnes
               max). Hébergement et pension non compris dans la prestation.</p>
             <table>
-              <tr class="table_header">
+              <tr class="table-header">
                 <th></th>
                 <th>2 jours.</th>
                 <th>3 jours.</th>
@@ -346,7 +346,7 @@
             </p>
             <p>Carte de pêche obligatoire non comprise dans la prestation.</p>
             <table>
-              <tr class="table_header">
+              <tr class="table-header">
                 <th>Groupe de 5 à 10 enfants maxi.</th>
                 <th>Groupe de 6 personnes handicapés maxi.</th>
               </tr>
@@ -363,7 +363,7 @@
               montage des mouches artificielles (prestation à la 1/2 journée).</p>
             <p>(Enfant à partir de 6 ans) Carte de pêche obligatoire non comprise dans la prestation.</p>
             <table>
-              <tr class="table_header">
+              <tr class="table-header">
                 <th>1 adulte<br>1 enfant.</th>
                 <th>1 adulte<br>2 enfants.</th>
                 <th>1 adulte<br>3 enfants.</th>
@@ -457,7 +457,7 @@
 
       <div class="gift__container container grid">
 
-        <div class="container__bon">
+        <div class="gift__bg-container">
 
           <div class="bubble"></div>
           <div class="bubble"></div>
@@ -470,38 +470,39 @@
           <div class="bubble"></div>
           <div class="bubble"></div>
 
-          <div id="container__form">
+          <div id="gift__form-container" class="gift__form-container">
 
             <form class="form" id="form" action="https://formsubmit.co/bacqueromain@orange.fr" method="POST">
 
-              <div class="photo__form"></div>
+              <div class="form__picture"></div>
 
               <div>
 
                 <h3 class="form__title">Formulaire de demande</h3>
 
-                <button class="form__button close-button"><img src="assets/img/close2.png" alt="icone de fermeture"
-                    loading="lazy"></button>
+                <button class="form__button form__button--close-button">
+                  <img src="assets/img/close2.png" alt="icone de fermeture" loading="lazy">
+                </button>
 
                 <div class="form__control">
-                  <label for="user__lastname">Prénom</label>
-                  <input id="user__lastname" type="text" name="Prénom" placeholder="Taper le Prénom" size="30" required>
+                  <label for="form__lastname">Prénom</label>
+                  <input id="form__lastname" type="text" name="Prénom" placeholder="Taper le Prénom" size="30" required>
                   <i class="fas fa-check-circle"></i>
                   <i class="fas fa-exclamation-circle"></i>
                   <small>Error message</small>
                 </div>
 
                 <div class="form__control">
-                  <label for="user__firstname">Nom</label>
-                  <input id="user__firstname" type="text" name="Nom" placeholder="Taper le Nom" size="30" required>
+                  <label for="form__firstname">Nom</label>
+                  <input id="form__firstname" type="text" name="Nom" placeholder="Taper le Nom" size="30" required>
                   <i class="fas fa-check-circle"></i>
                   <i class="fas fa-exclamation-circle"></i>
                   <small>Error message</small>
                 </div>
 
                 <div class="form__control">
-                  <label for="user__email">Adresse Mail</label>
-                  <input id="user__email" type="email" name="Email"
+                  <label for="form__email">Adresse Mail</label>
+                  <input id="form__email" type="email" name="Email"
                     pattern="^[_a-z0-9-]+(.[a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$"
                     placeholder="Taper l'adresse mail" size="30" required>
                   <i class="fas fa-check-circle"></i>
@@ -510,8 +511,8 @@
                 </div>
 
                 <div class="form__control">
-                  <label for="user__tel">Numéro De Téléphone</label>
-                  <input id="user__tel" type="tel" name="Tel" placeholder="Taper le numéro de téléphone" size="30"
+                  <label for="form__tel">Numéro De Téléphone</label>
+                  <input id="form__tel" type="tel" name="Tel" placeholder="Taper le numéro de téléphone" size="30"
                     required>
                   <i class="fas fa-check-circle"></i>
                   <i class="fas fa-exclamation-circle"></i>
@@ -523,7 +524,7 @@
                     placeholder="Information(s) complémentaire"></textarea>
                 </div>
 
-                <button class="submit__button" type="submit">Soumettre</button>
+                <button type="submit">Soumettre</button>
 
                 <div id="loader"></div>
 
@@ -540,14 +541,18 @@
               BASSIES) ou dans les Pyrénées Orientales (Lac des Bouillouses et Camporells). Veuillez remplir le
               formulaire pour envoyer votre demande.</p>
           </div>
-
-          <div class="wrapper">
-            <div class="hook__container"><img class="hook" src="assets/img/fishing_hook.png" alt="hameçon"
-                loading="lazy"></div>
-            <div class="hook__container"><img class="hook" src="assets/img/fishing_hook.png" alt="hameçon"
-                loading="lazy"></div>
-            <div class="bon" id="bon">
-              <h2><img id="fish" src="assets/img/fish.png" alt="image de poisson" loading="lazy"> Bon cadeau</h2>
+          <div class="gift__card">
+            <div class="hook">
+              <img class="hook__card" src="assets/img/fishing_hook.png" alt="hameçon" loading="lazy">
+            </div>
+            <div class="hook">
+              <img class="hook__card" src="assets/img/fishing_hook.png" alt="hameçon" loading="lazy">
+            </div>
+            <div class="gift__card-content" id="gift__card-content">
+              <h2>
+                <img src="assets/img/fish.png" alt="image de poisson" loading="lazy">
+                Bon cadeau
+              </h2>
               <p>Journée, 1/2 journée ou séjour pêche en initiation ou perfectionnement à la mouche ou au
                 toc.<br><br>Anniversaire, fête des pères, départ retraite, etc.</p>
 
@@ -573,22 +578,28 @@
 
           <div id="cottage--1" class="cottage cottage--1">
             <h3><img src="assets/img/home.png" alt="icone de gîte" loading="lazy"> GÎTE JO</h3>
-            <div class="cottages-img"><img src="assets/img/p1.jpg" alt="photo de l'interieur du gite de Jo numéro 1"
-                loading="lazy"></div>
-            <div class="cottages-img"><img src="assets/img/p2.jpg" alt="photo de l'interieur du gite de Jo numéro 2"
-                loading="lazy"></div>
-            <div class="cottages-img"><img src="assets/img/p3.jpg" alt="photo de l'interieur du gite de Jo numéro 3"
-                loading="lazy"></div>
+            <div class="cottages-img">
+              <img src="assets/img/p1.jpg" alt="photo de l'interieur du gite de Jo numéro 1" loading="lazy">
+            </div>
+            <div class="cottages-img">
+              <img src="assets/img/p2.jpg" alt="photo de l'interieur du gite de Jo numéro 2" loading="lazy">
+            </div>
+            <div class="cottages-img">
+              <img src="assets/img/p3.jpg" alt="photo de l'interieur du gite de Jo numéro 3" loading="lazy">
+            </div>
           </div>
 
           <div id="cottage--2" class="cottage cottage--2">
             <h3><img src="assets/img/home.png" alt="icone de gîte" loading="lazy"> GÎTE FLO</h3>
-            <div class="cottages-img"><img src="assets/img/p5.jpg" alt="photo de l'interieur du gite de Flo numéro 1"
-                loading="lazy"></div>
-            <div class="cottages-img"><img src="assets/img/p6.jpg" alt="photo de l'interieur du gite de Flo numéro 2"
-                loading="lazy"></div>
-            <div class="cottages-img"><img src="assets/img/p7.jpg" alt="photo de l'interieur du gite de Flo numéro 3"
-                loading="lazy"></div>
+            <div class="cottages-img">
+              <img src="assets/img/p5.jpg" alt="photo de l'interieur du gite de Flo numéro 1" loading="lazy">
+            </div>
+            <div class="cottages-img">
+              <img src="assets/img/p6.jpg" alt="photo de l'interieur du gite de Flo numéro 2" loading="lazy">
+            </div>
+            <div class="cottages-img">
+              <img src="assets/img/p7.jpg" alt="photo de l'interieur du gite de Flo numéro 3" loading="lazy">
+            </div>
           </div>
 
           <div id="sign" class="sign">
@@ -638,9 +649,10 @@
 
           <!-- card 1 -->
           <article class="album__card swiper-slide gal1">
-            <a href="assets/img/guide/guide1.jpg" data-lightbox="gal1" data-title=""><img
-                src="assets/img/guide/guide1.jpg" alt="photo de présentaion album numéro 1" class="album__img"
-                loading="lazy"></a>
+            <a href="assets/img/guide/guide1.jpg" data-lightbox="gal1" data-title="">
+              <img src="assets/img/guide/guide1.jpg" alt="photo de présentaion album numéro 1" class="album__img"
+                loading="lazy">
+            </a>
             <a href="assets/img/guide/guide2.jpg" data-lightbox="gal1" data-title=""></a>
             <a href="assets/img/guide/guide3.jpg" data-lightbox="gal1" data-title=""></a>
             <a href="assets/img/guide/guide4.jpg" data-lightbox="gal1" data-title=""></a>
@@ -652,9 +664,10 @@
 
           <!-- card 2 -->
           <article class="album__card swiper-slide gal2">
-            <a href="assets/img/guidage/guidage1.jpg" data-lightbox="gal2" data-title=""><img
-                src="assets/img/guidage/guidage1.jpg" alt="photo de présentaion album numéro 2" class="album__img"
-                loading="lazy"></a>
+            <a href="assets/img/guidage/guidage1.jpg" data-lightbox="gal2" data-title="">
+              <img src="assets/img/guidage/guidage1.jpg" alt="photo de présentaion album numéro 2" class="album__img"
+                loading="lazy">
+            </a>
             <a href="assets/img/guidage/guidage2.jpg" data-lightbox="gal2" data-title=""></a>
             <a href="assets/img/guidage/guidage3.jpg" data-lightbox="gal2" data-title=""></a>
             <a href="assets/img/guidage/guidage4.jpg" data-lightbox="gal2" data-title=""></a>
@@ -669,9 +682,10 @@
 
           <!-- card 3 -->
           <article class="album__card swiper-slide gal3">
-            <a href="assets/img/enfants/enfant1.jpg" data-lightbox="gal3" data-title=""><img
-                src="assets/img/enfants/enfant1.jpg" alt="photo de présentaion album numéro 3" class="album__img"
-                loading="lazy"></a>
+            <a href="assets/img/enfants/enfant1.jpg" data-lightbox="gal3" data-title="">
+              <img src="assets/img/enfants/enfant1.jpg" alt="photo de présentaion album numéro 3" class="album__img"
+                loading="lazy">
+            </a>
             <a href="assets/img/enfants/enfant2.jpg" data-lightbox="gal3" data-title=""></a>
             <a href="assets/img/enfants/enfant3.jpg" data-lightbox="gal3" data-title=""></a>
             <a href="assets/img/enfants/enfant4.jpg" data-lightbox="gal3" data-title=""></a>
@@ -683,9 +697,10 @@
 
           <!-- card 4 -->
           <article class="album__card swiper-slide gal4">
-            <a href="assets/img/salmonidés/truite1.jpg" data-lightbox="gal4" data-title=""><img
-                src="assets/img/salmonidés/truite3.jpg" alt="photo de présentaion album numéro 4" class="album__img"
-                loading="lazy"></a>
+            <a href="assets/img/salmonidés/truite1.jpg" data-lightbox="gal4" data-title="">
+              <img src="assets/img/salmonidés/truite3.jpg" alt="photo de présentaion album numéro 4" class="album__img"
+                loading="lazy">
+            </a>
             <a href="assets/img/salmonidés/truite2.jpg" data-lightbox="gal4" data-title=""></a>
             <a href="assets/img/salmonidés/truite3.jpg" data-lightbox="gal4" data-title=""></a>
             <a href="assets/img/salmonidés/truite4.jpg" data-lightbox="gal4" data-title=""></a>
@@ -697,9 +712,10 @@
 
           <!-- card 5 -->
           <article class="album__card swiper-slide gal5">
-            <a href="assets/img/rivieres/riviere1.jpg" data-lightbox="gal5" data-title="L'Arac"><img
-                src="assets/img/rivieres/riviere1.jpg" alt="photo de présentaion album numéro 5" class="album__img"
-                loading="lazy"></a>
+            <a href="assets/img/rivieres/riviere1.jpg" data-lightbox="gal5" data-title="L'Arac">
+              <img src="assets/img/rivieres/riviere1.jpg" alt="photo de présentaion album numéro 5" class="album__img"
+                loading="lazy">
+            </a>
             <a href="assets/img/rivieres/riviere2.jpg" data-lightbox="gal5" data-title="Etang du Garbet"></a>
             <a href="assets/img/rivieres/riviere3.jpg" data-lightbox="gal5" data-title="Le Riberot"></a>
             <a href="assets/img/rivieres/riviere4.jpg" data-lightbox="gal5" data-title="Le Garbet"></a>
@@ -719,10 +735,10 @@
       </div>
 
       <!-- video -->
-      <article class="video__container container">
+      <article class="video container">
         <h3 class="video__description">Rando Lacs Camporells</h3>
         <div class="video__card">
-          <video id="video-file" poster="">
+          <video id="video-file" poster="assets/video/poster.png">
             <source src="assets/video/les camporells.mp4" type="video/mp4">
             Mise à jour du navigateur requise !
           </video>
@@ -742,29 +758,29 @@
 
     <div class="about__container container grid reveal">
 
-      <div class="about-content about__titres reveal-1">
+      <div class="about__content reveal-1">
         <h2>Mes titres</h2>
         <p>n° diplôme: <span>BP031120335</span></p>
         <p>n° carte professionnelle: <span>03212ED0030</span></p>
         <p>n° de SIRET: <span>790 268 452 00022</span></p>
       </div>
 
-      <div class="about-content about__img reveal-3">
-        <img src="assets/img/Federation.png" alt="logo fédération" loading="lazy">
+      <div class="about__content reveal-3">
+        <img class="about__federation-logo" src="assets/img/Federation.png" alt="logo fédération" loading="lazy">
       </div>
 
-      <div class="about-content about__contact reveal-5">
+      <div class="about__content reveal-5">
         <h2>Contact</h2>
         <p>
-          <img class="icon icon-footer" src="assets/img/phone_green.png" alt="icone téléphone" loading="lazy">
+          <img class="icon icon--footer" src="assets/img/phone_green.png" alt="icone téléphone" loading="lazy">
           06.82.06.80.56
         </p>
         <p>
-          <img class="icon icon-footer" src="assets/img/mail_green.png" alt="icone boite mail" loading="lazy">
+          <img class="icon icon--footer" src="assets/img/mail_green.png" alt="icone boite mail" loading="lazy">
           <a href="mailto:joel.bacque@wanadoo.fr">joel.bacque@wanadoo.fr</a>
         </p>
         <p>
-          <img class="icon icon-footer" src="assets/img/marker_green.png" alt="icone marqueur" loading="lazy">
+          <img class="icon icon--footer" src="assets/img/marker_green.png" alt="icone marqueur" loading="lazy">
           La rivière 09140 Ercé
         </p>
 

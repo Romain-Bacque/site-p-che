@@ -1,11 +1,11 @@
 const utilsModule = require("./utils");
 
 const giftModule = {
-  formContainer: document.getElementById("container__form"),
-  firstName: document.getElementById("user__firstname"),
-  lastName: document.getElementById("user__lastname"),
-  email: document.getElementById("user__email"),
-  tel: document.getElementById("user__tel"),
+  formContainer: document.getElementById("gift__form-container"),
+  firstName: document.getElementById("form__firstname"),
+  lastName: document.getElementById("form__lastname"),
+  email: document.getElementById("form__email"),
+  tel: document.getElementById("form__tel"),
   // fromDateValue = fromDate.value.trim(),
   // toDateValue = toDate.value.trim(),
   msg: document.getElementById("msg"),
@@ -54,13 +54,13 @@ const giftModule = {
   hideForm: function () {
     giftModule.clearInputsText();
     giftModule.formContainer.style.display = "none";
-    giftModule.formContainer.classList.remove("container__form");
+    giftModule.formContainer.classList.remove("gift__form-container--active");
   },
   showForm: function () {
     const dates = document.querySelectorAll(".timepicker");
 
     giftModule.formContainer.style.display = "flex";
-    giftModule.formContainer.classList.add("container__form");
+    giftModule.formContainer.classList.add("gift__form-container--active");
 
     for (date of dates) {
       date.addEventListener("click", giftModule.handleMinAndMaxDate);

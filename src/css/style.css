@@ -1058,7 +1058,7 @@ header .nav {
   color: white;
 }
 
-.container__bon {
+.gift__bg-container {
   position: relative;
   color: white;
   background: url("../img/underwater.jpg");
@@ -1070,7 +1070,7 @@ header .nav {
   overflow: hidden;
 }
 
-.wrapper {
+.gift__card {
   filter: grayscale(0.3) blur(0.6px);
   position: relative;
   margin-top: auto;
@@ -1079,7 +1079,8 @@ header .nav {
   height: 40%;
   transform: rotate(10deg);
 }
-.bon {
+
+.gift__card-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1095,12 +1096,12 @@ header .nav {
   overflow: hidden;
 }
 
-.hook {
+.hook__card {
   position: absolute;
   top: 0;
   left: -22px;
 }
-.hook__container {
+.hook {
   transform: rotate(-10deg);
   position: absolute;
   top: -2.6em;
@@ -1108,14 +1109,17 @@ header .nav {
   width: 60px;
   height: 60px;
 }
-.hook__container:nth-child(1) {
+
+.hook:nth-child(1) {
   overflow: hidden;
   z-index: var(--z-tooltip);
 }
-.hook__container:nth-child(2) {
+
+.hook:nth-child(2) {
   z-index: 0;
 }
-.hook__container::before {
+
+.hook::before {
   position: absolute;
   top: -490px;
   left: 13px;
@@ -1127,7 +1131,7 @@ header .nav {
   z-index: var(--z-tooltip);
 }
 
-.bon h2 {
+.gift__card-content h2 {
   width: 100%;
   color: #7f9ba7;
   padding: 2em 0 2em;
@@ -1140,18 +1144,18 @@ header .nav {
   border-radius: 21% 10% 65% 46% / 0% 0% 43% 46%;
 }
 
-.bon p {
+.gift__card-content p {
   padding: 1em 1.5em 1em 1.5em;
 }
 
-.bon img {
+.gift__card-content img {
   vertical-align: middle;
   width: 70px;
   background-size: cover;
   background-color: white;
 }
 
-.bon button {
+.gift__card-content button {
   display: block;
   margin-top: 1em;
   font-size: var(--title-font);
@@ -1167,13 +1171,13 @@ header .nav {
   transition: var(--img-transition);
 }
 
-.bon button:hover {
+.gift__card-content button:hover {
   background-color: white;
   letter-spacing: 0.1rem;
   color: #7d93a7;
 }
 
-#container__form {
+.gift__form-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -1185,7 +1189,7 @@ header .nav {
   z-index: var(--z-tooltip);
 }
 
-.container__form {
+.gift__form-container--active {
   animation: animate2 0.3s linear;
   background-color: rgba(0, 0, 0, 0.6);
 }
@@ -1226,7 +1230,7 @@ header .nav {
   margin: 0;
 }
 
-.photo__form {
+.form__picture {
   background: url("../img/bon_cadeau.png") no-repeat;
   background-position: 0 50%;
   background-size: 112% 100%;
@@ -1236,7 +1240,7 @@ header .nav {
   margin-bottom: 2em;
 }
 
-.close-button {
+.form__button--close-button {
   position: absolute;
   top: 0.5em;
   right: 0.5em;
@@ -1640,7 +1644,7 @@ tr:nth-child(3) {
   background-color: #ededed;
 }
 
-.table_header {
+.table-header {
   color: white;
 }
 
@@ -1720,7 +1724,7 @@ tr:nth-child(3) {
   background-image: none;
 }
 
-.video__container {
+.video {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1751,11 +1755,11 @@ tr:nth-child(3) {
   justify-content: center;
 }
 
-.about-content {
+.about__content {
   display: inline-block;
 }
 
-.about__img img {
+.about__federation-logo {
   width: 18rem;
 }
 
@@ -1764,7 +1768,7 @@ tr:nth-child(3) {
   color: white;
 }
 
-.icon-footer {
+.icon--footer {
   filter: brightness(100);
 }
 
@@ -1864,7 +1868,7 @@ body.dark-theme {
     height: 100px;
   }
 
-  .wrapper {
+  .gift__card {
     width: 70%;
   }
   .about__data,
@@ -1921,7 +1925,7 @@ body.dark-theme {
     margin: 0 auto;
   }
   .album__container,
-  .video__container {
+  .video {
     width: 610px;
     margin-left: auto;
     margin-right: auto;
@@ -1974,7 +1978,7 @@ body.dark-theme {
     object-fit: fill;
   }
   .album__container,
-  .video__container {
+  .video {
     width: 700px;
   }
   .album__data {
@@ -2061,7 +2065,7 @@ body.dark-theme {
     bottom: 3rem;
   }
   .album__container,
-  .video__container {
+  .video {
     width: 610px;
     margin-left: auto;
     margin-right: auto;
