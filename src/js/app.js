@@ -165,11 +165,11 @@ const appModule = {
       if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
         document
           .querySelector(`.nav__menu a[href*="${sectionId}"]`)
-          .classList.add("active-link");
+          .classList.add("nav__link--active");
       } else {
         document
           .querySelector(`.nav__menu a[href*="${sectionId}"]`)
-          .classList.remove("active-link");
+          .classList.remove("nav__link--active");
       }
     });
   },

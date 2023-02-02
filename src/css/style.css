@@ -298,12 +298,12 @@ header .nav {
 }
 
 /*------------Active link-------------*/
-.active-link {
+.nav__link--active {
   position: relative;
   color: var(--title-color);
 }
 
-.active-link::after {
+.nav__link--active::after {
   /* nav link underline decoration */
   content: "";
   position: absolute;
@@ -2042,13 +2042,13 @@ body.dark-theme {
   .change-theme {
     color: white;
   }
-  .active-link::before {
+  .nav__link--active::before {
     background-color: white;
   }
   .scroll-header .nav__link {
     color: var(--text-color);
   }
-  .scroll-header .active-link::before {
+  .scroll-header .nav__link--active::before {
     background-color: var(--title-color);
   }
   .scroll-header .change-theme {
