@@ -76,9 +76,8 @@ const appModule = {
     });
 
     const navToggle = document.getElementById("nav-toggle");
-    navToggle.addEventListener("click", () =>{
-    console.log('rdsf')
-      document.getElementById("nav-menu").classList.add("nav__menu--active")}
+    navToggle.addEventListener("click", () =>
+      document.getElementById("nav-menu").classList.add("nav__menu--active")
     );
 
     const navClose = document.getElementById("nav-close");
