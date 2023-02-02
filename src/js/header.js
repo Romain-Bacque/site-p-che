@@ -29,8 +29,8 @@ const headerModule = {
 
     if (scrollY >= 100) header.classList.add("scroll-header");
     else header.classList.remove("scroll-header");
-    if (scrollY >= 100) fishLogo.classList.add("nav__logo-fish-rotate");
-    else fishLogo.classList.remove("nav__logo-fish-rotate");
+    if (scrollY >= 100) fishLogo.classList.add("nav__logo-fish--rotate");
+    else fishLogo.classList.remove("nav__logo-fish--rotate");
   },
 };
 

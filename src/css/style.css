@@ -278,12 +278,16 @@ header .nav {
   padding: 1rem;
 }
 
+.nav__logo-link {
+ cursor: pointer;
+}
+
 .nav__logo-fish {
   transform: rotate(0);
   transition: transform 0.3s linear;
 }
 
-.nav__logo-fish-rotate {
+.nav__logo-fish--rotate {
   transform: rotate(360deg);
 }
 
