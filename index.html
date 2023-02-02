@@ -14,6 +14,13 @@
   <!------- LightBox -------->
   <link rel="stylesheet" href="assets/css/lib/lightbox.min.css" />
   <script src="assets/js/lib/lightbox-plus-jquery.min.js"></script>
+  <script>
+    lightbox.option({
+      'wrapAround': true,
+      'alwaysShowNavOnTouchDevices': true,
+      'showImageNumberLabel': false
+    })
+  </script>
   <!-- scroll reveal -->
   <script src="assets/js/lib/scrollreveal.min.js"></script>
   <!-- swiper -->
@@ -163,7 +170,7 @@
             <div class="techniques__img-container">
               <img class="techniques__img" src="assets/img/prise_poisson.jpg" alt="photo pêche au toc" loading="lazy">
             </div>
-            <ul class="techniques__list">
+            <ul class="techniques__technique-details">
               <li>
                 <h3>La pêche au Toc 'aux appâts naturels ou nymphes artificielles':</h3>
                 <p>Après avoir effectué une approche patiente et discrète. Quelle récompense de sentir dans les doigts «
@@ -177,7 +184,7 @@
               <img class="techniques__img" src="assets/img/pêche_mouche.jpg" alt="photo pêche à la mouche"
                 loading="lazy">
             </div>
-            <ul class="techniques__list">
+            <ul class="techniques__technique-details">
               <li>
                 <h3>La pêche à la Mouche 'nymphe, noyée, sèche':</h3>
                 <p>Une pêche aussi technique que subtile, l’observation, l’étude de la rivière et la connaissance du
@@ -191,7 +198,7 @@
             <div class="techniques__img-container">
               <img class="techniques__img" src="assets/img/enfant_truite.jpg" alt="photo pêche au coup" loading="lazy">
             </div>
-            <ul class="techniques__list">
+            <ul class="techniques__technique-details">
               <li>
                 <h3>Découverte de la pêche pour les enfants ou la famille:</h3>
                 <p>La pêche des vairons et pêche à la bombette et buldo de la truite avec découverte du milieu aquatique
@@ -266,7 +273,7 @@
             </p>
           </div>
 
-          <div class="photos__banner"></div>
+          <div class="rates__banner-picture"></div>
         </div>
 
         <div class="rates__content reveal">
@@ -359,7 +366,7 @@
             </table>
           </div>
 
-          <div class="content reveal-7">
+          <div class="content reveal--7">
             <h3>⇁ Tarif Animations Famille:</h3>
             <p>Initiation à la pêche au coup et lancé (BOMBETTE, BULDO, LEURRE) ou découverte du milieu aquatique,
               montage des mouches artificielles (prestation à la 1/2 journée).</p>
@@ -380,7 +387,7 @@
 
         </div>
 
-        <div class="places__footer reveal-7">
+        <div class="rates__footer reveal--7">
           <div>
             <h3>Renseignement, revue et carte de pêche:</h3>
             <ol>

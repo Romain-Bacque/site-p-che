@@ -2,6 +2,7 @@
   "dependencies": {
     "browserify": "^17.0.0",
     "css-minify": "^2.0.0",
+    "lightbox2": "^2.11.3",
     "tinyify": "^3.1.0"
   },
   "name": "site-peche",
