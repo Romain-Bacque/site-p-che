@@ -1910,7 +1910,7 @@ body.dark-theme {
     width: 90%;
   }
   .techniques__technique-details {
-    position: inherit;
+    position: static;
     padding: var(--mb-2);
     width: 50%;
     list-style-image: url("../img/fishing.png");
