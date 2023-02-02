@@ -632,7 +632,6 @@ header .nav {
 .techniques__card {
   position: relative;
   display: flex;
-  justify-self: center;
   font-size: var(--small-font-size);
   margin-bottom: 1rem;
   border: none;
