@@ -231,6 +231,22 @@ header .nav {
   position: relative;
 }
 
+@media screen and (max-width: 1200px) {
+  .nav__menu {
+    position: fixed;
+    background-color: var(--body-color);
+    z-index: var(--z-fixed);
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 368px;
+    height: 100%;
+    box-shadow: -1px 0 4px hsla(var(--hue-color), 64%, 15%, 0.15);
+    padding: 3rem;
+    transition: 0.4s ease-out;
+  }
+}
+
 .nav__list {
   display: flex;
   flex-direction: column;
@@ -252,7 +268,7 @@ header .nav {
   cursor: pointer;
 }
 
-.show-menu {
+.nav__menu--active {
   right: 0;
 }
 
@@ -1628,7 +1644,7 @@ tr:nth-child(3) {
   background-color: #ededed;
 }
 
-.table-header {
+.table__header {
   color: white;
 }
 
@@ -1938,22 +1954,6 @@ body.dark-theme {
 }
 
 /*-------- for large devices ---------*/
-@media screen and (max-width: 1200px) {
-  .nav__menu {
-    position: fixed;
-    background-color: var(--body-color);
-    z-index: var(--z-fixed);
-    top: 0;
-    right: -100%;
-    width: 70%;
-    max-width: 368px;
-    height: 100%;
-    box-shadow: -1px 0 4px hsla(var(--hue-color), 64%, 15%, 0.15);
-    padding: 3rem;
-    transition: 0.4s ease-out;
-  }
-}
-
 @media screen and (min-width: 1024px) {
   .container {
     margin-left: auto;

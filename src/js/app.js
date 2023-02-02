@@ -76,13 +76,14 @@ const appModule = {
     });
 
     const navToggle = document.getElementById("nav-toggle");
-    navToggle.addEventListener("click", () =>
-      document.getElementById("nav-menu").classList.add("show-menu")
+    navToggle.addEventListener("click", () =>{
+    console.log('rdsf')
+      document.getElementById("nav-menu").classList.add("nav__menu--active")}
     );
 
     const navClose = document.getElementById("nav-close");
     navClose.addEventListener("click", () =>
-      document.getElementById("nav-menu").classList.remove("show-menu")
+      document.getElementById("nav-menu").classList.remove("nav__menu--active")
     );
 
     const navLink = document.querySelectorAll(".nav__link");
