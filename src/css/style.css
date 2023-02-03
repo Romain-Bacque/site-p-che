@@ -630,8 +630,7 @@ header .nav {
 }
 
 .techniques__card {
-  position: relative;
-  display: flex;
+  position: relative;  
   font-size: var(--small-font-size);
   margin-bottom: 1rem;
   border: none;
@@ -639,14 +638,14 @@ header .nav {
 }
 
 .techniques__technique-details {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
   width: 100%;
   height: 100%;
   list-style-image: url("../img/fishing.png");
   margin: 1rem 0 0 1rem;
   padding: 2rem;
-  position: absolute;
-  bottom: 1rem;
-  left: 0;
   text-shadow: 0 0 4px black;
   filter: brightness(100);
 }
@@ -1869,6 +1868,9 @@ body.dark-theme {
     right: 5rem;
     bottom: 4rem;
   }
+  .nav__list {
+    row-gap: 2rem;
+  }
 }
 
 @media screen and (max-width: 360px) {
@@ -1880,13 +1882,16 @@ body.dark-theme {
   .gift__card {
     width: 70%;
   }
+
   .about__data,
   .about__title {
     text-align: initial;
   }
+
   .about__title {
     margin-bottom: var(--mb-1-5);
   }
+
   .about__description {
     margin-bottom: var(--mb-2);
   }
@@ -1901,6 +1906,7 @@ body.dark-theme {
 
 @media screen and (min-width: 650px) {
   .techniques__card {
+    display: flex;
     justify-content: flex-start;
     border-top: 2px solid var(--title-color);
   }
