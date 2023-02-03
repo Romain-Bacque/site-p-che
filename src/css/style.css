@@ -1861,7 +1861,7 @@ body.dark-theme {
 /*-------- Media queries ---------*/
 
 /*-------- for small devices ---------*/
-@media all and (orientation: landscape) {
+@media screen and (orientation: landscape) {
   .nav__dark {
     left: 70%;
     right: 5rem;
@@ -1928,7 +1928,6 @@ body.dark-theme {
     margin-left: auto;
     margin-right: auto;
   }
-
   .album__container {
     padding-top: 2rem;
   }
