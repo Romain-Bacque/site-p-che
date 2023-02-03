@@ -639,12 +639,11 @@ header .nav {
 
 .techniques__technique-details {
   position: absolute;
-  bottom: 1rem;
+  top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
   list-style-image: url("../img/fishing.png");
-  margin: 1rem 0 0 1rem;
+  margin-left: 1rem;
   padding: 2rem;
   text-shadow: 0 0 4px black;
   filter: brightness(100);
