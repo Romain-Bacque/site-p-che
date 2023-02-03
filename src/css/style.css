@@ -644,7 +644,7 @@ header .nav {
   right: 0;
   list-style-image: url("../img/fishing.png");
   margin-left: 1rem;
-  padding: 2rem;
+  padding: var(--mb-2);
   text-shadow: 0 0 4px black;
   filter: brightness(100);
 }
@@ -1911,7 +1911,6 @@ body.dark-theme {
   }
   .techniques__technique-details {
     position: static;
-    padding: var(--mb-2);
     width: 50%;
     text-shadow: none;
     filter: var(--current-brightness);
